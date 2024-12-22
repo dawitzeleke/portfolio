@@ -4,20 +4,20 @@ const About = () => {
   return (
     <div
       name="about"
-      className="w-full h-auto bg-gradient-to-b from-gray-800 to-black text-white py-16"
+      className="w-full h-auto py-16 text-white bg-gradient-to-b from-gray-800 to-black"
     >
-      <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
+      <div className="flex flex-col justify-center w-full h-full max-w-screen-lg p-4 mx-auto">
         <div className="pb-6 text-center">
-          <p className="text-4xl font-bold inline border-b-4 border-gray-500">
+          <p className="inline text-4xl font-bold border-b-4 border-gray-500">
             About
           </p>
         </div>
 
-        <p className="text-lg sm:text-xl mt-6 sm:mt-12 leading-relaxed">
-        I am Dawit Zeleke, a Software Engineer from Addis Ababa, Ethiopia, skilled in backend development with tools like .NET Core and Docker. Currently pursuing my BSc in Software Engineering at Addis Ababa University, graduating in 2025.
+        <p className="mt-6 text-lg leading-relaxed sm:text-xl sm:mt-12">
+        I am Dawit Zeleke, a Software Engineer from Addis Ababa, Ethiopia, skilled in backend development with tools like .NET Core and Docker. Currently pursuing my BSc in Software Engineering at Addis Ababa University.
       </p>
 
-        <p className="text-lg sm:text-xl mt-4 leading-relaxed">
+        <p className="mt-4 text-lg leading-relaxed sm:text-xl">
         I interned as a Backend Developer at Xceltech Solution, contributing to backend services for an HR Management System. Through the Africa to Silicon Valley program, I honed my skills in Flutter and teamwork. Additionally, I’ve solved 500+ problems on LeetCode and Codeforces, enhancing my problem-solving and algorithm expertise.
         </p>
       </div>

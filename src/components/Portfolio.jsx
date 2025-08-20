@@ -2,6 +2,7 @@ import React from "react";
 import Horizon from "../assets/portfolio/horizon2.png";
 // import installNode from "../assets/portfolio/installNode.jpg";
 import Xcel from "../assets/xcel.jpg";
+import cognify from "../assets/cognify.png";
 import Hotel from "../assets/hotel.png";
 import learnify from "../assets/learnify.png";
 import { FaGithub} from "react-icons/fa";
@@ -12,30 +13,36 @@ const Portfolio = () => {
   const portfolios = [
     {
       id: 1,
+      src: cognify,
+      subTitle: "Cognify",
+      link: "https://github.com/dawitzeleke/capstoneProject",
+    },
+    {
+      id: 2,
       src: Xcel,
       subTitle: "HRMS",
       link: "https://github.com/amanjnc/XcelTech.HRMS",
     },
     {
-      id: 2,
+      id: 3,
       src: outPut,
       subTitle: "Football Analysis App",
       link: "https://github.com/dawitzeleke/football_analysis",
     },
     {
-      id: 5,
+      id: 4,
       src: learnify,
       subTitle: "An E-Learing Platform",
       link: "https://github.com/dawitzeleke/learnify",
     },
     {
-      id: 4,
+      id: 5,
       src: Horizon,
       subTitle: "Banking App",
       link: "https://github.com/dawitzeleke/banking",
     },
     {
-      id: 5,
+      id: 6,
       src: Hotel,
       subTitle: "Booking App",
       link: "https://github.com/dawitzeleke/booking-app",

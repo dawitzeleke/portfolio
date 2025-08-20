@@ -14,11 +14,11 @@ const About = () => {
         </div>
 
         <p className="mt-6 text-lg leading-relaxed sm:text-xl sm:mt-12">
-        I am Dawit Zeleke, a Software Engineer from Addis Ababa, Ethiopia, skilled in backend development with tools like .NET Core and Docker. Currently pursuing my BSc in Software Engineering at Addis Ababa University.
+        I am Dawit Zeleke, a Software Engineer from Addis Ababa, Ethiopia, skilled in backend development with tools like .NET Core and Docker.
       </p>
 
         <p className="mt-4 text-lg leading-relaxed sm:text-xl">
-        I interned as a Backend Developer at Xceltech Solution, contributing to backend services for an HR Management System. Through the Africa to Silicon Valley program, I honed my skills in Flutter and teamwork. Additionally, I’ve solved 500+ problems on LeetCode and Codeforces, enhancing my problem-solving and algorithm expertise.
+        I interned as a Backend Developer at Xceltech Solution, contributing to backend services for an HR Management System. Through the Africa to Silicon Valley program, I honed my skills in Flutter and teamwork. Additionally, I’ve solved 600+ problems on LeetCode and Codeforces, enhancing my problem-solving and algorithm expertise.
         </p>
       </div>
     </div>

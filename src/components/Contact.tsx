@@ -1,9 +1,7 @@
-import React from "react";
-
-const Contact = () => {
+const Contact = (): JSX.Element => {
   return (
     <div
-      name="contact"
+      id="contact"
       className="w-full h-screen bg-gradient-to-b from-black to-gray-800 p-4 text-white"
     >
       <div className="flex flex-col p-4 justify-center max-w-screen-lg mx-auto h-full">
@@ -35,7 +33,7 @@ const Contact = () => {
             <textarea
               name="message"
               placeholder="Enter your message"
-              rows="10"
+              rows={10}
               className="p-2 bg-transparent border-2 rounded-md text-white focus:outline-none"
             ></textarea>
 

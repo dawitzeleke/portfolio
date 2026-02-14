@@ -1,5 +1,3 @@
-import React from "react";
-
 import html from "../assets/html.png";
 import css from "../assets/css.png";
 import javascript from "../assets/javascript.png";
@@ -12,8 +10,16 @@ import java from "../assets/java.png";
 import linux from "../assets/linux.png";
 import docker from "../assets/docker.png";
 import postgresql from "../assets/postgresql.png";
-const Experience = () => {
-  const techs = [
+
+type Tech = {
+  id: number;
+  src: string;
+  title: string;
+  style: string;
+};
+
+const Experience = (): JSX.Element => {
+  const techs: Tech[] = [
     { id: 1, src: html, title: "HTML", style: "shadow-orange-500" },
     { id: 2, src: css, title: "CSS", style: "shadow-blue-500" },
     { id: 3, src: javascript, title: "JavaScript", style: "shadow-yellow-500" },
@@ -30,7 +36,7 @@ const Experience = () => {
 
   return (
     <div
-      name="experience"
+      id="experience"
       className="bg-gradient-to-b from-gray-800 to-black w-full"
     >
       <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white">

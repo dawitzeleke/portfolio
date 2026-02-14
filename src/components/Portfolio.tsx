@@ -1,16 +1,22 @@
-import React from "react";
 import Horizon from "../assets/portfolio/horizon2.png";
 // import installNode from "../assets/portfolio/installNode.jpg";
 import Xcel from "../assets/xcel.jpg";
 import cognify from "../assets/cognify.png";
 import Hotel from "../assets/hotel.png";
 import learnify from "../assets/learnify.png";
-import { FaGithub} from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import outPut from "../assets/output.png";
 // import reactWeather from "../assets/portfolio/reactWeather.jpg";
 
-const Portfolio = () => {
-  const portfolios = [
+type PortfolioItem = {
+  id: number;
+  src: string;
+  subTitle: string;
+  link?: string;
+};
+
+const Portfolio = (): JSX.Element => {
+  const portfolios: PortfolioItem[] = [
     {
       id: 1,
       src: cognify,
@@ -47,12 +53,11 @@ const Portfolio = () => {
       subTitle: "Booking App",
       link: "https://github.com/dawitzeleke/booking-app",
     },
-    
   ];
 
   return (
     <div
-      name="portfolio"
+      id="portfolio"
       className="w-full py-16 text-white bg-gradient-to-b from-black to-gray-800"
     >
       <div className="max-w-screen-lg p-4 mx-auto">

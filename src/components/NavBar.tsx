@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
 
-const NavBar = () => {
-  const [nav, setNav] = useState(false);
+type NavLink = {
+  id: number;
+  link: string;
+};
 
-  const links = [
+const NavBar = (): JSX.Element => {
+  const [nav, setNav] = useState<boolean>(false);
+
+  const links: NavLink[] = [
     {
       id: 1,
       link: "home",

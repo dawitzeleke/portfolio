@@ -37,7 +37,7 @@ const Experience = (): JSX.Element => {
   return (
     <section
       id="experience"
-      className="relative w-full py-20 text-white bg-gradient-to-b from-black via-gray-900 to-black"
+      className="relative w-full py-20 text-white bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden"
     >
       <div className="absolute inset-0 pointer-events-none opacity-30">
         <div className="absolute w-96 h-96 rounded-full blur-3xl bg-cyan-500/20 -top-20 -left-16" />

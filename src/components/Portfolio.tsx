@@ -58,7 +58,7 @@ const Portfolio = (): JSX.Element => {
   return (
     <section
       id="portfolio"
-      className="relative w-full py-20 text-white bg-gradient-to-b from-black via-gray-900 to-gray-800"
+      className="relative w-full py-20 text-white bg-gradient-to-b from-black via-gray-900 to-gray-800 overflow-hidden"
     >
       <div className="absolute inset-0 pointer-events-none opacity-30">
         <div className="absolute w-72 h-72 rounded-full blur-3xl bg-cyan-500/30 -top-10 -left-10" />

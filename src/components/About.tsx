@@ -2,7 +2,7 @@ const About = (): JSX.Element => {
   return (
     <section
       id="about"
-      className="relative w-full py-20 text-white bg-gradient-to-b from-gray-900 via-black to-gray-900"
+      className="relative w-full py-20 text-white bg-gradient-to-b from-gray-900 via-black to-gray-900 overflow-hidden"
     >
       <div className="absolute inset-0 pointer-events-none opacity-30">
         <div className="absolute w-80 h-80 rounded-full blur-3xl bg-cyan-500/20 -top-16 -left-10" />

@@ -55,23 +55,26 @@ const SocialLinks = (): JSX.Element => {
   ];
 
   return (
-    <div className="hidden lg:flex flex-col top-[35%] left-0 fixed">
-      <ul>
+    <div className="hidden lg:flex flex-col top-[35%] left-0 fixed z-50">
+      <ul className="space-y-3">
         {links.map(({ id, child, href, style, download }) => (
           <li
             key={id}
-            className={`flex justify-between items-center w-40 h-14 px-4 ml-[-100px] hover:ml-[-10px] hover:rounded-md duration-300 bg-gray-500 ${
+            className={`group flex items-center w-48 h-12 px-4 translate-x-[-120px] hover:translate-x-0 transition duration-300 bg-white/10 border border-white/10 backdrop-blur-xl shadow-xl ${
               style ?? ""
-            }`}
+            } rounded-r-full`}
           >
             <a
               href={href}
-              className="flex justify-between items-center w-full text-white"
+              className="flex items-center justify-between w-full text-sm font-medium text-white"
               download={download}
               target="_blank"
               rel="noreferrer"
             >
-              {child}
+              <span className="flex items-center gap-2">
+                {child}
+              </span>
+              <span className="h-2 w-2 rounded-full bg-gradient-to-r from-cyan-400 to-indigo-400 opacity-70 group-hover:opacity-100" />
             </a>
           </li>
         ))}

@@ -35,31 +35,54 @@ const Experience = (): JSX.Element => {
   ];
 
   return (
-    <div
+    <section
       id="experience"
-      className="bg-gradient-to-b from-gray-800 to-black w-full"
+      className="relative w-full py-20 text-white bg-gradient-to-b from-black via-gray-900 to-black"
     >
-      <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
-        <div className="text-center">
-          <p className="text-4xl font-bold border-b-4 border-gray-500 p-2 inline">
-            Experience
+      <div className="absolute inset-0 pointer-events-none opacity-30">
+        <div className="absolute w-96 h-96 rounded-full blur-3xl bg-cyan-500/20 -top-20 -left-16" />
+        <div className="absolute w-96 h-96 rounded-full blur-3xl bg-indigo-500/20 -bottom-20 -right-16" />
+      </div>
+
+      <div className="relative max-w-screen-xl px-6 mx-auto">
+        <div className="flex flex-col items-center text-center">
+          <span className="px-4 py-1 text-xs font-semibold tracking-widest text-cyan-300 uppercase border border-cyan-400/40 rounded-full bg-cyan-400/10">
+            Toolbox
+          </span>
+          <h2 className="mt-4 text-4xl font-bold md:text-5xl">Experience</h2>
+          <p className="max-w-2xl mt-3 text-gray-300">
+            These are the technologies I’ve used to ship production-ready apps.
           </p>
-          <p className="py-6">These are the technologies I've worked with.</p>
         </div>
 
-        <div className="w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-4">
+        <div className="grid gap-6 mt-12 sm:grid-cols-2 lg:grid-cols-3">
           {techs.map(({ id, src, title, style }) => (
-            <div
+            <article
               key={id}
-              className={`shadow-md hover:scale-105 duration-500 py-4 rounded-lg ${style}`}
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-xl transition duration-300 hover:-translate-y-1"
             >
-              <img src={src} alt="" className="w-16 mx-auto" />
-              <p className="mt-2 text-sm sm:text-base">{title}</p>
-            </div>
+              <div className="absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100">
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-indigo-500/10" />
+              </div>
+              <div className="relative flex items-center gap-4">
+                <div
+                  className={`flex h-14 w-14 items-center justify-center rounded-xl bg-black/30 shadow-md ${style}`}
+                >
+                  <img src={src} alt={title} className="w-8" />
+                </div>
+                <div>
+                  <p className="text-lg font-semibold">{title}</p>
+                  <p className="text-sm text-gray-400">Professional use</p>
+                </div>
+              </div>
+              <div className="relative mt-6 h-1 w-full overflow-hidden rounded-full bg-white/10">
+                <div className="h-full w-2/3 rounded-full bg-gradient-to-r from-cyan-400 to-indigo-400" />
+              </div>
+            </article>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

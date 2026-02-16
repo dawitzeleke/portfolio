@@ -34,7 +34,7 @@ const NavBar = (): JSX.Element => {
   ];
 
   return (
-    <div className="flex items-center justify-between w-full h-20 px-4 text-white bg-black md:fixed bg-opacity-90">
+    <div className="flex items-center justify-between w-full h-20 px-4 text-white bg-black md:fixed md:top-0 md:left-0 md:right-0 bg-opacity-90 z-50">
       <div>
         <h1 className="ml-2 text-5xl">Dawit Zeleke</h1>
       </div>

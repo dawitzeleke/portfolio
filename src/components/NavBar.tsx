@@ -25,10 +25,14 @@ const NavBar = (): JSX.Element => {
     },
     {
       id: 4,
-      link: "experience",
+      link: "work",
     },
     {
       id: 5,
+      link: "experience",
+    },
+    {
+      id: 6,
       link: "contact",
     },
   ];

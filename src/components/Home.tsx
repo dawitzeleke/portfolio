@@ -16,26 +16,21 @@ const Home = (): JSX.Element => {
       <div className="relative mx-auto flex min-h-screen max-w-6xl items-center px-6 py-24">
         <div className="grid w-full items-center gap-12 lg:grid-cols-[1.2fr_0.8fr]">
           <div className="max-w-2xl space-y-7">
-            <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-gray-300 backdrop-blur">
-              <span className="h-2 w-2 rounded-full bg-cyan-400" />
-              Simple, thoughtful portfolio design
-            </div>
-
             <div className="space-y-4">
               <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-300/80">
                 Dawit Zeleke
               </p>
               <h1 className="text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
-                I build clean, modern web experiences that feel easy to use.
+                Software Engineer
               </h1>
-              <p className="max-w-xl text-base leading-8 text-gray-300 sm:text-lg">
-                I design and develop portfolio-ready interfaces with React,
-                TypeScript, and Tailwind CSS, keeping the experience fast,
-                simple, and memorable.
-              </p>
+              {/* <p className="max-w-xl text-base leading-8 text-gray-300 sm:text-lg">
+                I build scalable full-stack applications and conduct ML research
+          from Flutter apps with 1,000+ downloads to climate projections
+                processing 98K+ records. Based in Addis Ababa, Ethiopia.
+              </p> */}
             </div>
 
-            <div className="flex flex-wrap gap-3">
+            {/* <div className="flex flex-wrap gap-3">
               <Link
                 to="portfolio"
                 smooth
@@ -54,10 +49,10 @@ const Home = (): JSX.Element => {
               >
                 Contact Me
               </Link>
-            </div>
+            </div> */}
 
-            <div className="flex flex-wrap gap-2 pt-1 text-sm text-gray-300">
-              {['React', 'TypeScript', 'Tailwind', '.NET'].map((skill) => (
+            {/* <div className="flex flex-wrap gap-2 pt-1 text-sm text-gray-300">
+              {['Flutter', 'Next.js', 'ASP.NET Core', 'Python', 'React', 'Machine Learning'].map((skill) => (
                 <span
                   key={skill}
                   className="rounded-full border border-white/10 bg-white/5 px-4 py-2"
@@ -65,7 +60,7 @@ const Home = (): JSX.Element => {
                   {skill}
                 </span>
               ))}
-            </div>
+            </div> */}
           </div>
 
           <div className="flex justify-center lg:justify-end">
@@ -77,19 +72,6 @@ const Home = (): JSX.Element => {
                   alt="Dawit Zeleke"
                   className="h-[28rem] w-full object-cover object-top"
                 />
-
-                <div className="border-t border-white/10 p-5">
-                  <p className="text-sm uppercase tracking-[0.3em] text-cyan-300/80">
-                    Portfolio Highlights
-                  </p>
-                  <p className="mt-2 text-lg font-semibold text-white">
-                    Simple UI. Strong engineering.
-                  </p>
-                  <p className="mt-2 text-sm leading-6 text-gray-300">
-                    A focused approach to building polished sites with clear
-                    structure and smooth interactions.
-                  </p>
-                </div>
               </div>
             </div>
           </div>

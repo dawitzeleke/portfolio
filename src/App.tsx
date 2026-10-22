@@ -2,6 +2,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Experience from "./components/Experience";
 import WorkExperience from "./components/WorkExperience";
+import Leadership from "./components/Leadership";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import Portfolio from "./components/Portfolio";
@@ -15,6 +16,7 @@ function App(): JSX.Element {
       <About />
       <Portfolio />
       <WorkExperience />
+      <Leadership />
       <Experience />
       <Contact />
 

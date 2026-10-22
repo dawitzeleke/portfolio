@@ -16,22 +16,31 @@ type Tech = {
   src: string;
   title: string;
   style: string;
+  category: string;
 };
 
 const Experience = (): JSX.Element => {
   const techs: Tech[] = [
-    { id: 1, src: html, title: "HTML", style: "shadow-orange-500" },
-    { id: 2, src: css, title: "CSS", style: "shadow-blue-500" },
-    { id: 3, src: javascript, title: "JavaScript", style: "shadow-yellow-500" },
-    { id: 4, src: reactImage, title: "React", style: "shadow-blue-600" },
-    { id: 5, src: tailwind, title: "Tailwind", style: "shadow-sky-400" },
-    { id: 6, src: nextjs, title: "Next JS", style: "shadow-white" },
-    { id: 7, src: github, title: "GitHub", style: "shadow-gray-400" },
-    { id: 8, src: python, title: "Python", style: "shadow-blue-200" },
-    { id: 9, src: java, title: "Java", style: "shadow-blue-400" },
-    { id: 10, src: docker, title: "Docker", style: "shadow-blue-700" },
-    { id: 11, src: linux, title: "Linux", style: "shadow-yellow-400" },
-    { id: 12, src: postgresql, title: "PostgreSQL", style: "shadow-blue-900" },
+    { id: 1, src: python, title: "Python", style: "shadow-blue-200", category: "Language" },
+    { id: 2, src: javascript, title: "JavaScript/TS", style: "shadow-yellow-500", category: "Language" },
+    { id: 3, src: java, title: "Java", style: "shadow-blue-400", category: "Language" },
+    { id: 4, src: reactImage, title: "React / React Native", style: "shadow-blue-600", category: "Framework" },
+    { id: 5, src: nextjs, title: "Next.js", style: "shadow-white", category: "Framework" },
+    { id: 6, src: html, title: "Flutter", style: "shadow-cyan-400", category: "Framework" },
+    { id: 7, src: docker, title: "Docker", style: "shadow-blue-700", category: "DevOps" },
+    { id: 8, src: linux, title: "Linux", style: "shadow-yellow-400", category: "DevOps" },
+    { id: 9, src: github, title: "Git / GitHub / GitLab", style: "shadow-gray-400", category: "DevOps" },
+    { id: 10, src: postgresql, title: "PostgreSQL", style: "shadow-blue-900", category: "Database" },
+    { id: 11, src: css, title: "MongoDB", style: "shadow-green-500", category: "Database" },
+    { id: 12, src: tailwind, title: "Tailwind CSS", style: "shadow-sky-400", category: "Styling" },
+  ];
+
+  const additionalSkills = [
+    "C#", "Dart", "PHP",
+    "ASP.NET Core", "Spring Boot", "Express.js",
+    "AWS", "Pandas", "NumPy",
+    "MySQL", "ScyllaDB",
+    "XGBoost", "Random Forest", "LSTM",
   ];
 
   return (
@@ -49,14 +58,14 @@ const Experience = (): JSX.Element => {
           <span className="px-4 py-1 text-xs font-semibold tracking-widest text-cyan-300 uppercase border border-cyan-400/40 rounded-full bg-cyan-400/10">
             Toolbox
           </span>
-          <h2 className="mt-4 text-4xl font-bold md:text-5xl">Experience</h2>
+          <h2 className="mt-4 text-4xl font-bold md:text-5xl">Technical Skills</h2>
           <p className="max-w-2xl mt-3 text-gray-300">
-            These are the technologies I’ve used to ship production-ready apps.
+            Technologies I've used to ship production-ready apps, conduct ML research, and build scalable systems.
           </p>
         </div>
 
         <div className="grid gap-6 mt-12 sm:grid-cols-2 lg:grid-cols-3">
-          {techs.map(({ id, src, title, style }) => (
+          {techs.map(({ id, src, title, style, category }) => (
             <article
               key={id}
               className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-xl transition duration-300 hover:-translate-y-1"
@@ -72,7 +81,7 @@ const Experience = (): JSX.Element => {
                 </div>
                 <div>
                   <p className="text-lg font-semibold">{title}</p>
-                  <p className="text-sm text-gray-400">Professional use</p>
+                  <p className="text-sm text-gray-400">{category}</p>
                 </div>
               </div>
               <div className="relative mt-6 h-1 w-full overflow-hidden rounded-full bg-white/10">
@@ -80,6 +89,21 @@ const Experience = (): JSX.Element => {
               </div>
             </article>
           ))}
+        </div>
+
+        {/* Additional skills as tags */}
+        <div className="mt-12">
+          <h3 className="text-center text-lg font-semibold text-gray-300 mb-6">Also experienced with</h3>
+          <div className="flex flex-wrap justify-center gap-3">
+            {additionalSkills.map((skill) => (
+              <span
+                key={skill}
+                className="px-4 py-2 text-sm font-medium text-gray-200 border rounded-full bg-white/5 border-white/10 transition hover:bg-white/10 hover:border-cyan-400/30"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>

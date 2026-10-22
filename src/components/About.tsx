@@ -17,33 +17,38 @@ const About = (): JSX.Element => {
           <h2 className="mt-4 text-4xl font-bold md:text-5xl">
             Building reliable, scalable systems
           </h2>
-          <p className="max-w-3xl mt-4 text-lg text-gray-300">
-            I am Dawit Zeleke, a Software Engineer from Addis Ababa, Ethiopia,
-            skilled in backend development with tools like .NET Core and Docker.
-          </p>
+          {/* <p className="max-w-3xl mt-4 text-lg text-gray-300">
+            I am Dawit Zeleke, a Software Engineer and Machine Learning
+            Researcher from Addis Ababa, Ethiopia, with a B.S. in Software
+            Engineering from Addis Ababa University.
+          </p> */}
         </div>
 
-        <div className="grid gap-10 mt-12 lg:grid-cols-2">
+        <div className="grid gap-10 mt-12 lg:grid-cols-1">
           <div className="space-y-6">
             <div className="p-6 border shadow-2xl rounded-2xl bg-white/5 border-white/10 backdrop-blur-xl">
               <p className="text-lg leading-relaxed text-gray-200">
-                I interned as a Backend Developer at Xceltech Solution,
-                contributing to backend services for an HR Management System.
-                Through the Africa to Silicon Valley program, I honed my skills
-                in Flutter and teamwork. Additionally, I’ve solved 600+ problems
-                on LeetCode and Codeforces, enhancing my problem-solving and
-                algorithm expertise.
+                I work as a Data Science Engineer &amp; Software Engineer at the
+                Ethiopian Artificial Intelligence Institute, where I build
+                production apps like Clean Ethiopia (1,000+ downloads) and
+                conduct ML research on climate projections. Previously, I
+                delivered scalable CRM dashboards at Zulu Technologies, led a
+                top-3 capstone project at AAiT Innovation Center, and dedicated
+                1,500+ hours to Data Structures and Algorithms through A2SV
+                (backed by Google).
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-3">
+            {/* <div className="flex flex-wrap gap-3">
               {[
-                ".NET Core",
-                "Docker",
-                "FastAPI",
                 "Flutter",
-                "Algorithms",
-                "System Design",
+                "Next.js",
+                "ASP.NET Core",
+                "Python",
+                "Machine Learning",
+                "React",
+                "Spring Boot",
+                "Docker",
               ].map((skill) => (
                 <span
                   key={skill}
@@ -52,35 +57,41 @@ const About = (): JSX.Element => {
                   {skill}
                 </span>
               ))}
-            </div>
+            </div> */}
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2">
+          {/* <div className="grid gap-6 sm:grid-cols-2">
             <div className="p-6 border shadow-2xl rounded-2xl bg-gradient-to-br from-cyan-500/10 to-transparent border-cyan-400/20">
-              <p className="text-3xl font-bold text-white">600+</p>
+              <p className="text-3xl font-bold text-white">1,500+</p>
               <p className="mt-2 text-sm text-gray-300">
-                Problems solved on competitive platforms
+                Hours dedicated to DSA &amp; software development at A2SV
               </p>
             </div>
             <div className="p-6 border shadow-2xl rounded-2xl bg-gradient-to-br from-indigo-500/10 to-transparent border-indigo-400/20">
-              <p className="text-3xl font-bold text-white">2+ yrs</p>
+              <p className="text-3xl font-bold text-white">1,000+</p>
               <p className="mt-2 text-sm text-gray-300">
-                Building backend services and APIs
+                Downloads on Clean Ethiopia app (Google Play)
               </p>
             </div>
-            <div className="p-6 border shadow-2xl rounded-2xl bg-white/5 border-white/10 backdrop-blur-xl sm:col-span-2">
+            <div className="p-6 border shadow-2xl rounded-2xl bg-gradient-to-br from-violet-500/10 to-transparent border-violet-400/20">
+              <p className="text-3xl font-bold text-white">Top 0.01%</p>
+              <p className="mt-2 text-sm text-gray-300">
+                National exam performer out of 338,528 students
+              </p>
+            </div>
+            <div className="p-6 border shadow-2xl rounded-2xl bg-white/5 border-white/10 backdrop-blur-xl">
               <p className="text-sm uppercase tracking-widest text-gray-400">
                 Focus
               </p>
               <p className="mt-2 text-lg font-semibold text-gray-100">
-                Performance, reliability, and developer experience
+                Full-stack, ML research &amp; leadership
               </p>
               <p className="mt-2 text-sm text-gray-300">
-                I love crafting clean architectures, optimizing APIs, and building
-                products that scale with clarity.
+                From leading 140 students at A2SV to deploying production ML
+                models and cross-platform apps.
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

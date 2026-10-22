@@ -5,36 +5,20 @@ import { Link } from "react-scroll";
 type NavLink = {
   id: number;
   link: string;
+  label: string;
 };
 
 const NavBar = (): JSX.Element => {
   const [nav, setNav] = useState<boolean>(false);
 
   const links: NavLink[] = [
-    {
-      id: 1,
-      link: "home",
-    },
-    {
-      id: 2,
-      link: "about",
-    },
-    {
-      id: 3,
-      link: "portfolio",
-    },
-    {
-      id: 4,
-      link: "work",
-    },
-    {
-      id: 5,
-      link: "experience",
-    },
-    {
-      id: 6,
-      link: "contact",
-    },
+    { id: 1, link: "home", label: "Home" },
+    { id: 2, link: "about", label: "About" },
+    { id: 3, link: "portfolio", label: "Portfolio" },
+    { id: 4, link: "work", label: "Experience" },
+    { id: 5, link: "leadership", label: "Leadership" },
+    { id: 6, link: "experience", label: "Skills" },
+    { id: 7, link: "contact", label: "Contact" },
   ];
 
   return (
@@ -44,13 +28,13 @@ const NavBar = (): JSX.Element => {
       </div>
 
       <ul className="hidden md:flex">
-        {links.map(({ id, link }) => (
+        {links.map(({ id, link, label }) => (
           <li
             key={id}
             className="px-4 font-medium text-gray-500 capitalize duration-200 cursor-pointer hover:scale-105"
           >
             <Link to={link} smooth duration={500}>
-              {link}
+              {label}
             </Link>
           </li>
         ))}
@@ -65,7 +49,7 @@ const NavBar = (): JSX.Element => {
 
       {nav && (
         <ul className="absolute top-0 left-0 flex flex-col items-center justify-center w-full h-screen text-gray-500 bg-gradient-to-b from-black to-gray-800">
-          {links.map(({ id, link }) => (
+          {links.map(({ id, link, label }) => (
             <li
               key={id}
               className="px-4 py-6 text-4xl capitalize cursor-pointer"
@@ -76,7 +60,7 @@ const NavBar = (): JSX.Element => {
                 smooth
                 duration={500}
               >
-                {link}
+                {label}
               </Link>
             </li>
           ))}

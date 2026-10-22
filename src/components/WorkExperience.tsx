@@ -19,19 +19,24 @@ type ExperienceItem = {
 const experiences: ExperienceItem[] = [
   {
     id: 1,
-    role: "Research Assistant & Software Engineer",
+    role: "Data Science Engineer & ML Researcher / Software Engineer",
     company: "Ethiopian Artificial Intelligence Institute",
     type: "Full-time",
-    duration: "9 mos",
+    duration: "1 yr+",
     period: "Aug 2025 – Present",
     location: "Addis Ababa, Ethiopia",
     mode: "On-site",
     bullets: [
-      "Conducting machine learning research and delivering research outputs as Research Assistant.",
-      "Delivered a cross-platform environmental pollution reporting app (Clean Ethiopia) with 16 modules and OTP-verified guest submissions (Flutter, GetX).",
-      "Improved network reliability with exponential backoff and 5-min API caching, reducing redundant calls by ~60%.",
+      "Conducted research on ML-driven climate projections, processing 98K+ historical records across 196 locations and 315K+ daily CMIP6 records to model climate extremes across Ethiopia.",
+      "Developed and benchmarked 3 ML models (XGBoost, Random Forest, LSTM) using 14 engineered spatiotemporal features, with XGBoost achieving 0.82 KGE and 0.75 NSE.",
+      "Generated climate projections through 2100 under SSP2-4.5 and SSP5-8.5 scenarios, producing 1,033 future monthly projections.",
+      "Developed and deployed the Clean Ethiopia environmental violation reporting app, achieving 1,000+ downloads on Google Play Store.",
+      "Improved network reliability with exponential backoff and API caching, reducing redundant calls by 60%.",
+      "Implemented the TeleHealth cross-platform app in Flutter with real-time video consultations (Livekit), appointment booking, and role-based dashboards.",
+      "Re-architected backend chat infrastructure from HTTP polling to persistent WebSocket connection, eliminating ~20 redundant API requests per minute per user.",
+      "Automated backend deployments via GitLab CI/CD pipeline, reducing release time from ~15 minutes to under 2 minutes.",
     ],
-    skills: ["Flutter", "NestJS", "Machine Learning", "Research"],
+    skills: ["Flutter", "NestJS", "Python", "XGBoost", "LSTM", "Machine Learning", "CI/CD"],
     accentFrom: "from-cyan-500",
     accentTo: "to-blue-600",
     borderAccent: "border-cyan-400/30",
@@ -39,16 +44,18 @@ const experiences: ExperienceItem[] = [
   {
     id: 2,
     role: "Front-End Developer",
-    company: "Zulu Tech",
+    company: "Zulu Technologies",
     type: "Full-time",
     duration: "5 mos",
     period: "Nov 2025 – Mar 2026",
     location: "Remote",
     mode: "Remote",
     bullets: [
-      "Built a Next.js CRM dashboard handling 2K+ contacts across 15+ modules, enabling scalable loan operations.",
+      "Delivered scalable software solutions for global clients across 3 continents, managing end-to-end development cycles in an enterprise outsourcing environment.",
+      "Built a Next.js CRM dashboard handling 20K+ contacts across 15+ modules, enabling scalable loan operations.",
       "Engineered an AI-assisted document pipeline (5 APIs, versioning, workflows) accelerating loan processing.",
       "Designed a keyboard-first UI with 26 custom hooks, unifying 6 data entities and reducing context switching.",
+      "Pioneered rapid prototyping initiatives for localized projects, decreasing MVP delivery time from 6 weeks to 20 days.",
     ],
     skills: ["Next.js", "React", "TypeScript"],
     accentFrom: "from-violet-500",
@@ -57,20 +64,21 @@ const experiences: ExperienceItem[] = [
   },
   {
     id: 3,
-    role: "Full Stack Developer | PM & QA",
-    company: "CodeLinden",
+    role: "Software Development Team Lead",
+    company: "AAiT Innovation Center",
     type: "Full-time",
-    duration: "5 mos",
-    period: "May 2025 – Sep 2025",
-    location: "Brisbane, Australia",
-    mode: "Remote",
+    duration: "6 mos",
+    period: "Jan 2025 – Jun 2025",
+    location: "Addis Ababa, Ethiopia",
+    mode: "On-site",
     bullets: [
-      "Developed booking system with PHP, JavaScript, Jest, and ScyllaDB focusing on migration and testing.",
-      "Migrated 3,000+ lines of PHP to JavaScript, preserving complex booking logic and functionality.",
-      "Implemented Jest with 25+ unit tests to improve reliability and testing.",
-      "Migrated from SQL to ScyllaDB by designing optimized tables and queries.",
+      "Project selected as one of the top 3 from 20+ applicants for a spot at the AAiT Innovation Center.",
+      "Led a team of 4 developers in building Cognify, an interactive e-learning platform using React Native, ASP.NET Core, and MongoDB.",
+      "Adapted 4+ social media-inspired features to create a more interactive e-learning experience.",
+      "Created a recommendation system to suggest content based on students' past performance.",
+      "Achieved the 2nd-highest score among 40 capstone projects.",
     ],
-    skills: ["JavaScript", "PHP", "Jest", "ScyllaDB"],
+    skills: ["React Native", "ASP.NET Core", "MongoDB", "Team Leadership"],
     accentFrom: "from-emerald-500",
     accentTo: "to-teal-600",
     borderAccent: "border-emerald-400/30",
@@ -85,11 +93,11 @@ const experiences: ExperienceItem[] = [
     location: "Addis Ababa, Ethiopia",
     mode: "On-site",
     bullets: [
-      "Developed backend services for a Human Resource Management System using .NET Core.",
-      "Integrated Docker for containerization, enabling consistent environments and simplified deployment.",
-      "Worked with SQL Server for database management, optimizing queries for better performance.",
+      "Developed an HR management system using ASP.NET Core, translating stakeholder requirements into backend services and business workflows.",
+      "Validated RESTful API endpoints and resolved critical defects, improving backend reliability and integration testing.",
+      "Added pagination and enhanced functionality for improved user experience and performance.",
     ],
-    skills: [".NET Core", "Docker", "SQL Server", "Git"],
+    skills: ["ASP.NET Core", "REST APIs", "SQL Server", "Git"],
     accentFrom: "from-amber-500",
     accentTo: "to-orange-600",
     borderAccent: "border-amber-400/30",
@@ -97,16 +105,15 @@ const experiences: ExperienceItem[] = [
   {
     id: 5,
     role: "Competitive Programming & Software Dev",
-    company: "A2SV | Africa to Silicon Valley",
+    company: "A2SV | Africa to Silicon Valley (Backed by Google)",
     type: "Program",
     duration: "1 yr 2 mos",
     period: "Sep 2022 – Oct 2023",
     location: "Addis Ababa, Ethiopia",
     mode: "On-site",
     bullets: [
-      "Gained a comprehensive understanding of Data Structures and Algorithms, and Mobile development with Flutter.",
-      "Learned 18 Data Structures and Algorithms topics and solved 600+ problems on Leetcode and Codeforces.",
-      "100+ students were placed in top tech companies such as Google, Bloomberg, Palantir in the last 4 years.",
+      "Dedicated 1,500+ hours to mastering Data Structures, Algorithms, Software Development, and professional collaboration.",
+      "A2SV placed 100+ students at top-tech companies such as Google, Bloomberg, Databricks, Amazon, and LinkedIn.",
     ],
     skills: ["DSA", "Flutter", "Competitive Programming"],
     accentFrom: "from-rose-500",
@@ -141,11 +148,11 @@ const WorkExperience = (): JSX.Element => {
             Career
           </span>
           <h2 className="mt-4 text-4xl font-bold md:text-5xl">
-            Work Experience
+            Professional &amp; Internship Experience
           </h2>
           <p className="max-w-2xl mt-3 text-gray-300">
             A timeline of my professional journey — from competitive programming
-            to building production systems at scale.
+            to building production systems and conducting ML research at scale.
           </p>
         </div>
 
@@ -261,7 +268,7 @@ const WorkExperience = (): JSX.Element => {
                         <div
                           className={`overflow-hidden transition-all duration-500 ease-in-out ${
                             isExpanded
-                              ? "max-h-96 opacity-100 mt-5"
+                              ? "max-h-[600px] opacity-100 mt-5"
                               : "max-h-0 opacity-0 mt-0"
                           }`}
                         >

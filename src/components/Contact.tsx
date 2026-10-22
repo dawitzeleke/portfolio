@@ -24,18 +24,22 @@ const Contact = (): JSX.Element => {
           <div className="space-y-6">
             <div className="p-6 border shadow-2xl rounded-2xl bg-white/5 border-white/10 backdrop-blur-xl">
               <p className="text-lg leading-relaxed text-gray-200">
-                I’m always open to discussing new opportunities, partnerships, or
-                freelance work. I’ll reply within 24–48 hours.
+                I'm always open to discussing new opportunities, partnerships, or
+                freelance work. I'll reply within 24–48 hours.
               </p>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-4 sm:grid-cols-3">
               <div className="p-5 rounded-2xl border border-white/10 bg-white/5">
                 <p className="text-sm text-gray-400">Email</p>
-                <p className="mt-1 font-semibold">dawitzeleke92@gmail.com</p>
+                <p className="mt-1 font-semibold text-sm">dawitzeleke92@gmail.com</p>
+              </div>
+              <div className="p-5 rounded-2xl border border-white/10 bg-white/5">
+                <p className="text-sm text-gray-400">Phone</p>
+                <p className="mt-1 font-semibold text-sm">+251962235740</p>
               </div>
               <div className="p-5 rounded-2xl border border-white/10 bg-white/5">
                 <p className="text-sm text-gray-400">Location</p>
-                <p className="mt-1 font-semibold">Addis Ababa, ET</p>
+                <p className="mt-1 font-semibold text-sm">Addis Ababa, Ethiopia</p>
               </div>
             </div>
           </div>

@@ -11,9 +11,6 @@ type ExperienceItem = {
   mode: string;
   bullets: string[];
   skills: string[];
-  accentFrom: string;
-  accentTo: string;
-  borderAccent: string;
 };
 
 const experiences: ExperienceItem[] = [
@@ -37,9 +34,6 @@ const experiences: ExperienceItem[] = [
       "Automated backend deployments via GitLab CI/CD pipeline, reducing release time from ~15 minutes to under 2 minutes.",
     ],
     skills: ["Flutter", "NestJS", "Python", "XGBoost", "LSTM", "Machine Learning", "CI/CD"],
-    accentFrom: "from-cyan-500",
-    accentTo: "to-blue-600",
-    borderAccent: "border-cyan-400/30",
   },
   {
     id: 2,
@@ -58,9 +52,6 @@ const experiences: ExperienceItem[] = [
       "Pioneered rapid prototyping initiatives for localized projects, decreasing MVP delivery time from 6 weeks to 20 days.",
     ],
     skills: ["Next.js", "React", "TypeScript"],
-    accentFrom: "from-violet-500",
-    accentTo: "to-purple-600",
-    borderAccent: "border-violet-400/30",
   },
   {
     id: 3,
@@ -79,9 +70,6 @@ const experiences: ExperienceItem[] = [
       "Achieved the 2nd-highest score among 40 capstone projects.",
     ],
     skills: ["React Native", "ASP.NET Core", "MongoDB", "Team Leadership"],
-    accentFrom: "from-emerald-500",
-    accentTo: "to-teal-600",
-    borderAccent: "border-emerald-400/30",
   },
   {
     id: 4,
@@ -98,9 +86,6 @@ const experiences: ExperienceItem[] = [
       "Added pagination and enhanced functionality for improved user experience and performance.",
     ],
     skills: ["ASP.NET Core", "REST APIs", "SQL Server", "Git"],
-    accentFrom: "from-amber-500",
-    accentTo: "to-orange-600",
-    borderAccent: "border-amber-400/30",
   },
   {
     id: 5,
@@ -116,221 +101,120 @@ const experiences: ExperienceItem[] = [
       "A2SV placed 100+ students at top-tech companies such as Google, Bloomberg, Databricks, Amazon, and LinkedIn.",
     ],
     skills: ["DSA", "Flutter", "Competitive Programming"],
-    accentFrom: "from-rose-500",
-    accentTo: "to-pink-600",
-    borderAccent: "border-rose-400/30",
   },
 ];
 
 const WorkExperience = (): JSX.Element => {
   const [expandedId, setExpandedId] = useState<number | null>(1);
 
-  const toggleExpand = (id: number) => {
-    setExpandedId(expandedId === id ? null : id);
-  };
-
   return (
     <section
       id="work"
-      className="relative w-full py-24 text-white bg-gradient-to-b from-gray-900 via-black to-gray-900 overflow-hidden"
+      className="relative w-full py-24 bg-[#0b0f10] text-white"
     >
-      {/* Decorative background blurs */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute w-[500px] h-[500px] rounded-full blur-[120px] bg-cyan-500/8 -top-40 left-1/4" />
-        <div className="absolute w-[500px] h-[500px] rounded-full blur-[120px] bg-violet-500/8 bottom-0 right-1/4" />
-        <div className="absolute w-[300px] h-[300px] rounded-full blur-[100px] bg-emerald-500/6 top-1/2 -left-20" />
-      </div>
+      <div className="section-container">
+        {/* Section header */}
+        <p className="section-label">Career</p>
+        <h2 className="section-heading">
+          Work experience
+        </h2>
+        <p className="section-subtitle">
+          A timeline of my professional journey — from competitive programming
+          to building production systems and conducting ML research at scale.
+        </p>
 
-      <div className="relative max-w-screen-xl px-6 mx-auto">
-        {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-16">
-          <span className="px-4 py-1 text-xs font-semibold tracking-widest text-cyan-300 uppercase border border-cyan-400/40 rounded-full bg-cyan-400/10">
-            Career
-          </span>
-          <h2 className="mt-4 text-4xl font-bold md:text-5xl">
-            Professional &amp; Internship Experience
-          </h2>
-          <p className="max-w-2xl mt-3 text-gray-300">
-            A timeline of my professional journey — from competitive programming
-            to building production systems and conducting ML research at scale.
-          </p>
-        </div>
+        {/* Experience list — clean editorial style */}
+        <div className="mt-16 space-y-0">
+          {experiences.map((exp) => {
+            const isExpanded = expandedId === exp.id;
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Vertical timeline line */}
-          <div className="absolute left-6 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-500/40 via-violet-500/40 to-transparent" />
-
-          <div className="space-y-12">
-            {experiences.map((exp, index) => {
-              const isLeft = index % 2 === 0;
-              const isExpanded = expandedId === exp.id;
-
-              return (
-                <div
-                  key={exp.id}
-                  className={`relative flex items-start gap-6 md:gap-0 ${
-                    isLeft ? "md:flex-row" : "md:flex-row-reverse"
-                  }`}
+            return (
+              <div
+                key={exp.id}
+                className="border-t border-white/[0.06] first:border-t-0"
+              >
+                <button
+                  onClick={() => setExpandedId(isExpanded ? null : exp.id)}
+                  className="w-full text-left py-6 group cursor-pointer"
                 >
-                  {/* Timeline node */}
-                  <div className="absolute left-6 md:left-1/2 -translate-x-1/2 z-10">
-                    <div
-                      className={`w-4 h-4 rounded-full bg-gradient-to-br ${exp.accentFrom} ${exp.accentTo} ring-4 ring-gray-900 shadow-lg shadow-cyan-500/20`}
-                    />
-                  </div>
-
-                  {/* Date label — visible on md+ on the opposite side */}
-                  <div
-                    className={`hidden md:flex w-1/2 ${
-                      isLeft
-                        ? "justify-end pr-12"
-                        : "justify-start pl-12"
-                    } items-start pt-1`}
-                  >
-                    <span className="text-sm font-medium text-gray-400 tracking-wide">
-                      {exp.period}
-                    </span>
-                  </div>
-
-                  {/* Card */}
-                  <div
-                    className={`ml-14 md:ml-0 md:w-1/2 ${
-                      isLeft ? "md:pl-12" : "md:pr-12"
-                    }`}
-                  >
-                    <div
-                      onClick={() => toggleExpand(exp.id)}
-                      className={`group relative overflow-hidden rounded-2xl border ${exp.borderAccent} bg-white/[0.03] backdrop-blur-xl shadow-2xl cursor-pointer transition-all duration-500 hover:-translate-y-1 hover:shadow-3xl ${
-                        isExpanded
-                          ? "ring-1 ring-white/10"
-                          : ""
-                      }`}
-                    >
-                      {/* Gradient shimmer on hover */}
-                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        <div
-                          className={`absolute inset-0 bg-gradient-to-br ${exp.accentFrom}/5 via-transparent ${exp.accentTo}/5`}
-                        />
+                  <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-2 items-start">
+                    <div>
+                      <div className="flex items-center gap-3">
+                        <h3 className="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors leading-tight">
+                          {exp.role}
+                        </h3>
+                        <span className="hidden md:inline-block px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-white/[0.05] text-white/40 border border-white/[0.06]">
+                          {exp.type}
+                        </span>
                       </div>
-
-                      {/* Top accent bar */}
-                      <div
-                        className={`h-1 w-full bg-gradient-to-r ${exp.accentFrom} ${exp.accentTo}`}
-                      />
-
-                      <div className="relative p-6">
-                        {/* Header row */}
-                        <div className="flex items-start justify-between gap-3">
-                          <div className="flex-1 min-w-0">
-                            <h3 className="text-lg font-bold text-white leading-tight">
-                              {exp.role}
-                            </h3>
-                            <p className="mt-1 text-sm font-medium text-gray-300">
-                              {exp.company}
-                            </p>
-                          </div>
-                          <div className="flex flex-col items-end gap-1 flex-shrink-0">
-                            <span
-                              className={`px-2.5 py-0.5 text-[10px] font-semibold uppercase rounded-full bg-gradient-to-r ${exp.accentFrom}/20 ${exp.accentTo}/20 text-white tracking-wider`}
-                            >
-                              {exp.type}
-                            </span>
-                            <span className="text-xs text-gray-500">
-                              {exp.duration}
-                            </span>
-                          </div>
-                        </div>
-
-                        {/* Meta row */}
-                        <div className="flex flex-wrap items-center gap-3 mt-3 text-xs text-gray-400">
-                          <span className="md:hidden">{exp.period}</span>
-                          <span className="flex items-center gap-1">
-                            <svg
-                              className="w-3.5 h-3.5"
-                              fill="currentColor"
-                              viewBox="0 0 20 20"
-                            >
-                              <path
-                                fillRule="evenodd"
-                                d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
-                            {exp.location}
-                          </span>
-                          <span className="px-2 py-0.5 rounded-full bg-white/5 text-gray-400">
-                            {exp.mode}
-                          </span>
-                        </div>
-
-                        {/* Expandable bullets */}
-                        <div
-                          className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                            isExpanded
-                              ? "max-h-[600px] opacity-100 mt-5"
-                              : "max-h-0 opacity-0 mt-0"
-                          }`}
-                        >
-                          <ul className="space-y-2.5">
-                            {exp.bullets.map((bullet, i) => (
-                              <li
-                                key={i}
-                                className="flex items-start gap-2.5 text-sm text-gray-300 leading-relaxed"
-                              >
-                                <span
-                                  className={`mt-2 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-gradient-to-r ${exp.accentFrom} ${exp.accentTo}`}
-                                />
-                                {bullet}
-                              </li>
-                            ))}
-                          </ul>
-
-                          {/* Skills */}
-                          <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-white/5">
-                            {exp.skills.map((skill) => (
-                              <span
-                                key={skill}
-                                className="px-3 py-1 text-[11px] font-medium text-gray-300 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
-                              >
-                                {skill}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-
-                        {/* Expand indicator */}
-                        <div className="flex items-center justify-center mt-3">
-                          <svg
-                            className={`w-4 h-4 text-gray-500 transition-transform duration-300 ${
-                              isExpanded ? "rotate-180" : ""
-                            }`}
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            strokeWidth={2}
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M19 9l-7 7-7-7"
-                            />
-                          </svg>
-                        </div>
-                      </div>
+                      <p className="mt-1 text-sm text-white/40">
+                        {exp.company}
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-xs text-white/30 font-mono whitespace-nowrap">
+                        {exp.period}
+                      </span>
+                      <svg
+                        className={`w-4 h-4 text-white/20 transition-transform duration-300 ${
+                          isExpanded ? "rotate-180" : ""
+                        }`}
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
                     </div>
                   </div>
-                </div>
-              );
-            })}
-          </div>
 
-          {/* Timeline end dot */}
-          <div className="absolute left-6 md:left-1/2 -translate-x-1/2 -bottom-2">
-            <div className="w-3 h-3 rounded-full bg-gray-700 ring-4 ring-gray-900" />
-          </div>
+                  {/* Meta row */}
+                  <div className="flex flex-wrap items-center gap-3 mt-2 text-xs text-white/25">
+                    <span>{exp.location}</span>
+                    <span>·</span>
+                    <span>{exp.mode}</span>
+                    <span>·</span>
+                    <span>{exp.duration}</span>
+                  </div>
+                </button>
+
+                {/* Expandable content */}
+                <div
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                    isExpanded
+                      ? "max-h-[800px] opacity-100 pb-8"
+                      : "max-h-0 opacity-0 pb-0"
+                  }`}
+                >
+                  <ul className="space-y-3 pl-4 border-l border-white/[0.06]">
+                    {exp.bullets.map((bullet, i) => (
+                      <li
+                        key={i}
+                        className="text-sm text-white/45 leading-relaxed pl-4 relative"
+                      >
+                        <span className="absolute left-0 top-2.5 w-1.5 h-1.5 rounded-full bg-white/15" />
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Skills */}
+                  <div className="flex flex-wrap gap-2 mt-5 pl-4">
+                    {exp.skills.map((skill) => (
+                      <span key={skill} className="tech-tag">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
+
+      <div className="divider mt-0" />
     </section>
   );
 };

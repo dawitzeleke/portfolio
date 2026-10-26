@@ -1,25 +1,24 @@
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Experience from "./components/Experience";
-import WorkExperience from "./components/WorkExperience";
-import Leadership from "./components/Leadership";
-import Home from "./components/Home";
 import NavBar from "./components/NavBar";
+import Home from "./components/Home";
 import Portfolio from "./components/Portfolio";
+import About from "./components/About";
+import WorkExperience from "./components/WorkExperience";
+import Experience from "./components/Experience";
+import Leadership from "./components/Leadership";
+import Contact from "./components/Contact";
 import SocialLinks from "./components/SocialLinks";
 
 function App(): JSX.Element {
   return (
-    <div>
+    <div className="bg-[#0b0f10] min-h-screen">
       <NavBar />
       <Home />
-      <About />
       <Portfolio />
+      <About />
       <WorkExperience />
-      <Leadership />
       <Experience />
+      <Leadership />
       <Contact />
-
       <SocialLinks />
     </div>
   );

@@ -2,98 +2,68 @@ const About = (): JSX.Element => {
   return (
     <section
       id="about"
-      className="relative w-full py-20 text-white bg-gradient-to-b from-gray-900 via-black to-gray-900 overflow-hidden"
+      className="relative w-full py-24 bg-[#0b0f10] text-white"
     >
-      <div className="absolute inset-0 pointer-events-none opacity-30">
-        <div className="absolute w-80 h-80 rounded-full blur-3xl bg-cyan-500/20 -top-16 -left-10" />
-        <div className="absolute w-80 h-80 rounded-full blur-3xl bg-indigo-500/20 -bottom-16 -right-10" />
-      </div>
+      <div className="section-container">
+        {/* Section header */}
+        <p className="section-label">About</p>
+        <h2 className="section-heading">
+          How I approach engineering
+        </h2>
+        <p className="section-subtitle">
+          Habits that run through my projects, each linked to the work where you can check it.
+        </p>
 
-      <div className="relative max-w-screen-xl px-6 mx-auto">
-        <div className="flex flex-col items-center text-center">
-          <span className="px-4 py-1 text-xs font-semibold tracking-widest text-cyan-300 uppercase border border-cyan-400/40 rounded-full bg-cyan-400/10">
-            About Me
-          </span>
-          <h2 className="mt-4 text-4xl font-bold md:text-5xl">
-            Building reliable, scalable systems
-          </h2>
-          {/* <p className="max-w-3xl mt-4 text-lg text-gray-300">
-            I am Dawit Zeleke, a Software Engineer and Machine Learning
-            Researcher from Addis Ababa, Ethiopia, with a B.S. in Software
-            Engineering from Addis Ababa University.
-          </p> */}
-        </div>
-
-        <div className="grid gap-10 mt-12 lg:grid-cols-1">
-          <div className="space-y-6">
-            <div className="p-6 border shadow-2xl rounded-2xl bg-white/5 border-white/10 backdrop-blur-xl">
-              <p className="text-lg leading-relaxed text-gray-200">
-                I work as a Data Science Engineer &amp; Software Engineer at the
-                Ethiopian Artificial Intelligence Institute, where I build
-                production apps like Clean Ethiopia (1,000+ downloads) and
-                conduct ML research on climate projections. Previously, I
-                delivered scalable CRM dashboards at Zulu Technologies, led a
-                top-3 capstone project at AAiT Innovation Center, and dedicated
-                1,500+ hours to Data Structures and Algorithms through A2SV
-                (backed by Google).
-              </p>
+        {/* Engineering principles */}
+        <div className="mt-16 space-y-0">
+          {[
+            {
+              title: "Build for production, not demos",
+              body: "Every project I ship is built to handle real users. Clean Ethiopia has 1,000+ downloads on Google Play. The CRM dashboard at Zulu handles 20K+ contacts. I optimise for reliability — exponential backoff, API caching, and CI/CD pipelines that cut release time from 15 minutes to under 2.",
+              seen: "Clean Ethiopia, Zulu CRM",
+            },
+            {
+              title: "Turn records into decisions",
+              body: "Data is only useful once someone can act on it. I processed 98K+ historical climate records and 315K+ daily CMIP6 records to produce actionable projections through 2100. XGBoost achieved 0.82 KGE and 0.75 NSE across Ethiopia's climate extremes.",
+              seen: "Ethiopian AI Institute, Climate ML Research",
+            },
+            {
+              title: "Ship it so others can run it",
+              body: "Software is finished when someone relies on it. I automated backend deployments via GitLab CI/CD, re-architected chat from HTTP polling to WebSocket (eliminating ~20 redundant requests/min/user), and built cross-platform apps that work across Android and iOS.",
+              seen: "TeleHealth, Clean Ethiopia",
+            },
+            {
+              title: "Design for the people who use it",
+              body: "The best code is invisible to users — they just see something that works. I build keyboard-first UIs with custom hooks, social-media-inspired e-learning features, and recommendation systems based on student performance. The interface should feel natural.",
+              seen: "Cognify, Zulu CRM",
+            },
+          ].map((principle, i) => (
+            <div
+              key={i}
+              className="py-10 border-t border-white/[0.06] first:border-t-0"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr] gap-6 md:gap-12">
+                <h3 className="font-display text-xl md:text-2xl text-white/90 leading-tight">
+                  {principle.title}
+                </h3>
+                <div>
+                  <p className="text-sm text-white/50 leading-relaxed">
+                    {principle.body}
+                  </p>
+                  <p className="mt-3 text-xs text-white/30">
+                    Seen in{" "}
+                    <span className="text-white/50 font-medium">
+                      {principle.seen}
+                    </span>
+                  </p>
+                </div>
+              </div>
             </div>
-
-            {/* <div className="flex flex-wrap gap-3">
-              {[
-                "Flutter",
-                "Next.js",
-                "ASP.NET Core",
-                "Python",
-                "Machine Learning",
-                "React",
-                "Spring Boot",
-                "Docker",
-              ].map((skill) => (
-                <span
-                  key={skill}
-                  className="px-4 py-2 text-sm font-medium text-gray-200 border rounded-full bg-white/5 border-white/10"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div> */}
-          </div>
-
-          {/* <div className="grid gap-6 sm:grid-cols-2">
-            <div className="p-6 border shadow-2xl rounded-2xl bg-gradient-to-br from-cyan-500/10 to-transparent border-cyan-400/20">
-              <p className="text-3xl font-bold text-white">1,500+</p>
-              <p className="mt-2 text-sm text-gray-300">
-                Hours dedicated to DSA &amp; software development at A2SV
-              </p>
-            </div>
-            <div className="p-6 border shadow-2xl rounded-2xl bg-gradient-to-br from-indigo-500/10 to-transparent border-indigo-400/20">
-              <p className="text-3xl font-bold text-white">1,000+</p>
-              <p className="mt-2 text-sm text-gray-300">
-                Downloads on Clean Ethiopia app (Google Play)
-              </p>
-            </div>
-            <div className="p-6 border shadow-2xl rounded-2xl bg-gradient-to-br from-violet-500/10 to-transparent border-violet-400/20">
-              <p className="text-3xl font-bold text-white">Top 0.01%</p>
-              <p className="mt-2 text-sm text-gray-300">
-                National exam performer out of 338,528 students
-              </p>
-            </div>
-            <div className="p-6 border shadow-2xl rounded-2xl bg-white/5 border-white/10 backdrop-blur-xl">
-              <p className="text-sm uppercase tracking-widest text-gray-400">
-                Focus
-              </p>
-              <p className="mt-2 text-lg font-semibold text-gray-100">
-                Full-stack, ML research &amp; leadership
-              </p>
-              <p className="mt-2 text-sm text-gray-300">
-                From leading 140 students at A2SV to deploying production ML
-                models and cross-platform apps.
-              </p>
-            </div>
-          </div> */}
+          ))}
         </div>
       </div>
+
+      <div className="divider mt-0" />
     </section>
   );
 };

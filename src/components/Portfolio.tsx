@@ -1,75 +1,78 @@
-import Horizon from "../assets/portfolio/horizon2.png";
-import Xcel from "../assets/xcel.jpg";
 import cognify from "../assets/cognify.png";
-import Hotel from "../assets/hotel.png";
-import learnify from "../assets/learnify.png";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import Xcel from "../assets/xcel.jpg";
 import outPut from "../assets/output.png";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
-type PortfolioItem = {
+type Project = {
   id: number;
-  src: string;
-  subTitle: string;
+  category: string;
+  title: string;
   description: string;
-  tech: string;
-  link?: string;
+  status: string;
+  statusColor: string;
+  techs: string[];
+  githubLink?: string;
   liveLink?: string;
+  image?: string;
 };
 
 const Portfolio = (): JSX.Element => {
-  const portfolios: PortfolioItem[] = [
+  const featuredProjects: Project[] = [
     {
       id: 1,
-      src: cognify,
-      subTitle: "Cognify",
+      category: "Interactive e-learning platform",
+      title: "Cognify",
       description:
-        "Interactive e-learning platform with social media-inspired features and a recommendation system. Top 3 project at AAiT Innovation Center, 2nd-highest among 40 capstone projects.",
-      tech: "React Native • ASP.NET Core • MongoDB",
-      link: "https://github.com/dawitzeleke/capstoneProject",
+        "An interactive e-learning platform with social media-inspired features and a recommendation system. Top 3 project at AAiT Innovation Center, 2nd-highest among 40 capstone projects.",
+      status: "Completed, no public demo",
+      statusColor: "text-amber-400",
+      techs: ["React Native", "ASP.NET Core", "MongoDB"],
+      githubLink: "https://github.com/dawitzeleke/capstoneProject",
+      image: cognify,
     },
     {
       id: 2,
-      src: Xcel,
-      subTitle: "HR Management System",
+      category: "Computer vision analysis",
+      title: "Football Analysis",
       description:
-        "Backend services for an HR management system, translating stakeholder requirements into business workflows with RESTful APIs.",
-      tech: "ASP.NET Core • SQL Server • Docker",
-      link: "https://github.com/amanjnc/XcelTech.HRMS",
+        "Computer vision-powered football analysis tool for tracking player movements, ball possession, and game statistics using ML models.",
+      status: "Completed",
+      statusColor: "text-emerald-400",
+      techs: ["Python", "Computer Vision", "ML"],
+      githubLink: "https://github.com/dawitzeleke/football_analysis",
+      image: outPut,
     },
     {
       id: 3,
-      src: outPut,
-      subTitle: "Football Analysis App",
+      category: "HR management system",
+      title: "HR Management System",
       description:
-        "Computer vision-powered football analysis tool for tracking player movements and game statistics.",
-      tech: "Python • Computer Vision • ML",
-      link: "https://github.com/dawitzeleke/football_analysis",
+        "Backend services for an HR management system, translating stakeholder requirements into business workflows with RESTful APIs.",
+      status: "Completed",
+      statusColor: "text-emerald-400",
+      techs: ["ASP.NET Core", "SQL Server", "Docker"],
+      githubLink: "https://github.com/amanjnc/XcelTech.HRMS",
+      image: Xcel,
     },
+  ];
+
+  const moreProjects: { title: string; description: string; techs: string; link?: string }[] = [
     {
-      id: 4,
-      src: learnify,
-      subTitle: "Learnify — E-Learning Platform",
-      description:
-        "A comprehensive e-learning platform focused on clean UI and interactive learning experiences.",
-      tech: "React • Node.js • Web App",
+      title: "Learnify",
+      description: "A comprehensive e-learning platform focused on clean UI and interactive learning experiences.",
+      techs: "React, Node.js",
       link: "https://github.com/dawitzeleke/learnify",
     },
     {
-      id: 5,
-      src: Horizon,
-      subTitle: "Banking App",
-      description:
-        "A modern banking application with account management, transactions, and financial dashboards.",
-      tech: "Next.js • TypeScript • Plaid",
+      title: "Banking App",
+      description: "A modern banking application with account management, transactions, and financial dashboards.",
+      techs: "Next.js, TypeScript, Plaid",
       link: "https://github.com/dawitzeleke/banking",
     },
     {
-      id: 6,
-      src: Hotel,
-      subTitle: "Booking App",
-      description:
-        "Full-featured booking system with search, reservation management, and payment integration.",
-      tech: "React • Node.js • MongoDB",
+      title: "Booking App",
+      description: "Full-featured booking system with search, reservation management, and payment integration.",
+      techs: "React, Node.js, MongoDB",
       link: "https://github.com/dawitzeleke/booking-app",
     },
   ];
@@ -77,87 +80,146 @@ const Portfolio = (): JSX.Element => {
   return (
     <section
       id="portfolio"
-      className="relative w-full py-20 text-white bg-gradient-to-b from-black via-gray-900 to-gray-800 overflow-hidden"
+      className="relative w-full py-24 bg-[#0b0f10] text-white"
     >
-      <div className="absolute inset-0 pointer-events-none opacity-30">
-        <div className="absolute w-72 h-72 rounded-full blur-3xl bg-cyan-500/30 -top-10 -left-10" />
-        <div className="absolute w-72 h-72 rounded-full blur-3xl bg-purple-500/30 -bottom-10 -right-10" />
-      </div>
+      <div className="section-container">
+        {/* Section header */}
+        <p className="section-label">Projects</p>
+        <h2 className="section-heading">
+          Case studies
+        </h2>
+        <p className="section-subtitle">
+          Full-stack systems I've designed, built, and shipped. Each one links
+          to a case study that is clear about what is finished and what is still in progress.
+        </p>
 
-      <div className="relative max-w-screen-xl px-6 mx-auto">
-        <div className="flex flex-col items-center text-center">
-          <span className="px-4 py-1 text-xs font-semibold tracking-widest text-cyan-300 uppercase border border-cyan-400/40 rounded-full bg-cyan-400/10">
-            Selected Work
-          </span>
-          <h2 className="mt-4 text-4xl font-bold md:text-5xl">
-            Portfolio
-          </h2>
-          <p className="max-w-2xl mt-3 text-gray-300">
-            Explore some of my recent projects — from ML-powered apps to
-            full-stack platforms and cross-platform mobile solutions.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 gap-8 mt-12 sm:grid-cols-2 lg:grid-cols-3">
-          {portfolios.map(({ id, src, subTitle, description, tech, link, liveLink }) => (
+        {/* Featured project cards */}
+        <div className="mt-16 space-y-20">
+          {featuredProjects.map((project) => (
             <article
-              key={id}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-2xl backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40"
+              key={project.id}
+              className="group"
             >
-              <div className="relative">
-                <img
-                  src={src}
-                  alt={subTitle}
-                  className="h-52 w-full object-cover transition duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-80" />
-                <div className="absolute inset-x-0 bottom-0 p-4">
-                  <h3 className="text-lg font-semibold tracking-wide">{subTitle}</h3>
-                  <p className="mt-1 text-sm text-cyan-300/80">
-                    {tech}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                {/* Text side */}
+                <div className="space-y-4">
+                  <p className="text-xs text-white/30 font-mono uppercase tracking-wider">
+                    {project.category}
                   </p>
+                  <h3 className="font-display text-3xl md:text-4xl text-white leading-tight">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm text-white/50 leading-relaxed max-w-md">
+                    {project.description}
+                  </p>
+
+                  {/* Status */}
+                  <div className="flex items-center gap-2 pt-1">
+                    <span className={`inline-block w-2 h-2 rounded-full ${
+                      project.status.includes("no public") ? "bg-amber-400" : "bg-emerald-400"
+                    }`}
+                      style={{
+                        boxShadow: project.status.includes("no public")
+                          ? "0 0 6px rgba(251,191,36,0.5)"
+                          : "0 0 6px rgba(74,222,128,0.5)",
+                      }}
+                    />
+                    <span className={`text-xs ${project.statusColor}`}>
+                      {project.status}
+                    </span>
+                  </div>
+
+                  {/* Tech tags */}
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {project.techs.map((tech) => (
+                      <span key={tech} className="tech-tag">{tech}</span>
+                    ))}
+                  </div>
+
+                  {/* Links */}
+                  <div className="flex items-center gap-4 pt-3">
+                    {project.githubLink && (
+                      <a
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors"
+                      >
+                        <FaGithub size={16} />
+                        View source →
+                      </a>
+                    )}
+                    {project.liveLink && (
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm text-emerald-400/80 hover:text-emerald-400 transition-colors"
+                      >
+                        <FaExternalLinkAlt size={12} />
+                        Live demo ↗
+                      </a>
+                    )}
+                  </div>
                 </div>
+
+                {/* Image side */}
+                {project.image && (
+                  <div className="relative overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.02]">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                    />
+                  </div>
+                )}
               </div>
 
-              <div className="px-5 py-3">
-                <p className="text-sm text-gray-400 leading-relaxed line-clamp-3">
-                  {description}
-                </p>
-              </div>
-
-              <div className="flex items-center justify-between px-5 py-4 border-t border-white/5">
-                <span className="text-sm text-gray-300">View Source</span>
-                <div className="flex items-center gap-2">
-                  {liveLink && (
-                    <a
-                      href={liveLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-400/10 px-4 py-2 text-sm font-medium text-emerald-200 transition hover:bg-emerald-400/20"
-                    >
-                      <FaExternalLinkAlt size={14} />
-                      Live
-                    </a>
-                  )}
-                  {link ? (
-                    <a
-                      href={link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-400/10 px-4 py-2 text-sm font-medium text-cyan-200 transition hover:bg-cyan-400/20"
-                    >
-                      <FaGithub size={18} />
-                      GitHub
-                    </a>
-                  ) : (
-                    <span className="text-sm text-gray-500">Private</span>
-                  )}
-                </div>
-              </div>
+              {/* Divider between projects */}
+              <div className="divider mt-16" />
             </article>
           ))}
         </div>
+
+        {/* More projects — table style like Biniyam's */}
+        <div className="mt-20">
+          <h3 className="font-display text-2xl md:text-3xl text-white mb-8">
+            More projects
+          </h3>
+          <div className="space-y-0">
+            {moreProjects.map((project, i) => (
+              <a
+                key={i}
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="table-row-hover group grid grid-cols-1 md:grid-cols-[200px_1fr_auto_auto] gap-3 md:gap-6 items-center py-5 border-t border-white/[0.06] cursor-pointer"
+              >
+                <h4 className="text-sm font-semibold text-white group-hover:text-emerald-400 transition-colors">
+                  {project.title}
+                </h4>
+                <p className="text-sm text-white/40 line-clamp-1">
+                  {project.description}
+                </p>
+                <span className="font-mono text-xs text-white/25 hidden md:block whitespace-nowrap">
+                  {project.techs}
+                </span>
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                  className="text-white/20 group-hover:text-emerald-400 transition-colors hidden md:block"
+                >
+                  <path d="M1 13L13 1M13 1H5M13 1V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
+
+      <div className="divider mt-8" />
     </section>
   );
 };

@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -12,19 +10,25 @@
   *::after {
     box-sizing: border-box;
   }
+
   html {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
     width: 100%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+
   body {
     margin: 0;
     overflow-x: hidden;
     width: 100%;
-    background: #050816;
-    color: white;
-    scroll-behavior: smooth;
+    background: #0b0f10;
+    color: #e8e6e3;
+    line-height: 1.6;
   }
+
   #root {
     min-height: 100vh;
     width: 100%;
@@ -32,7 +36,137 @@
   }
 
   ::selection {
-    background: rgba(34, 211, 238, 0.35);
+    background: rgba(74, 222, 128, 0.25);
     color: white;
   }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0b0f10;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2a2f32;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3a3f42;
+  }
+}
+
+@layer components {
+  /* Display heading font */
+  .font-display {
+    font-family: 'Newsreader', Georgia, serif;
+  }
+
+  /* Mono font for technical labels */
+  .font-mono {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  /* Section container */
+  .section-container {
+    @apply max-w-5xl mx-auto px-6;
+  }
+
+  /* Horizontal divider */
+  .divider {
+    @apply w-full h-px;
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Green accent button */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-emerald-500 px-6 py-3 text-sm font-semibold text-[#0b0f10] transition-all duration-200;
+    border-radius: 8px;
+  }
+  .btn-primary:hover {
+    @apply bg-emerald-400;
+    transform: translateY(-1px);
+  }
+
+  /* Ghost button */
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 border bg-transparent px-6 py-3 text-sm font-medium text-white/80 transition-all duration-200;
+    border-radius: 8px;
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+  .btn-ghost:hover {
+    @apply text-white;
+    border-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  /* Tag / pill label */
+  .tech-tag {
+    @apply inline-block rounded-full border px-3 py-1 text-xs text-white/50 font-mono;
+    border-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.03);
+  }
+
+  /* Status dot */
+  .status-dot {
+    @apply inline-block w-2 h-2 rounded-full bg-emerald-400;
+    box-shadow: 0 0 6px rgba(74, 222, 128, 0.5);
+  }
+
+  /* Card with subtle border */
+  .card {
+    @apply rounded-xl backdrop-blur-sm;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background-color: rgba(255, 255, 255, 0.02);
+  }
+
+  /* Section label (small caps above heading) */
+  .section-label {
+    @apply text-xs font-medium tracking-[0.15em] uppercase text-white/40;
+  }
+
+  /* Large editorial heading */
+  .section-heading {
+    @apply font-display text-3xl sm:text-4xl md:text-5xl font-normal text-white leading-[1.15] mt-3;
+  }
+
+  /* Section subtitle */
+  .section-subtitle {
+    @apply text-base text-white/50 mt-4 max-w-2xl leading-relaxed;
+  }
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+.animate-delay-100 { animation-delay: 100ms; }
+.animate-delay-200 { animation-delay: 200ms; }
+.animate-delay-300 { animation-delay: 300ms; }
+.animate-delay-400 { animation-delay: 400ms; }
+.animate-delay-500 { animation-delay: 500ms; }
+
+/* Subtle glow for bottom border on nav */
+.nav-glow {
+  box-shadow: 0 1px 0 0 rgba(255,255,255,0.04), 0 4px 30px -10px rgba(0,0,0,0.5);
+}
+
+/* Table row hover */
+.table-row-hover {
+  transition: background-color 0.2s ease;
+}
+.table-row-hover:hover {
+  background-color: rgba(255,255,255,0.02);
 }

@@ -74,28 +74,6 @@ const Experience = (): JSX.Element => {
             </div>
           ))}
         </div>
-
-        {/* Education section */}
-        <div className="mt-20">
-          <h3 className="font-display text-2xl md:text-3xl text-white mb-8">
-            Education
-          </h3>
-          <div className="py-6 border-t border-white/[0.06]">
-            <div className="grid grid-cols-1 md:grid-cols-[180px_1fr] gap-3 md:gap-8">
-              <span className="text-sm font-semibold text-white/70">
-                B.S. Software Engineering
-              </span>
-              <div>
-                <p className="text-sm text-white/50">
-                  Addis Ababa University — Addis Ababa Institute of Technology (AAiT)
-                </p>
-                <p className="mt-1 text-xs text-white/25 font-mono">
-                  Graduated 2025
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
       <div className="divider mt-0" />

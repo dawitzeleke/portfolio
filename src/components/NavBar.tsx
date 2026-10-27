@@ -19,11 +19,13 @@ const NavBar = (): JSX.Element => {
   }, []);
 
   const links: NavLink[] = [
-    { id: 1, link: "home", label: "Products" },
-    { id: 2, link: "portfolio", label: "Projects" },
-    { id: 3, link: "experience", label: "Engineering" },
-    { id: 4, link: "about", label: "About" },
-    { id: 5, link: "contact", label: "Contact" },
+    { id: 1, link: "about", label: "About" },
+    { id: 2, link: "education", label: "Education" },
+    { id: 3, link: "work", label: "Experience" },
+    { id: 4, link: "leadership", label: "Leadership" },
+    { id: 5, link: "experience", label: "Skills" },
+    { id: 6, link: "awards", label: "Awards" },
+    { id: 7, link: "contact", label: "Contact" },
   ];
 
   return (

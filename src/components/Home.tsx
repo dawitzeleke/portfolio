@@ -3,6 +3,7 @@ import photo from "../assets/photo.png";
 
 const Home = (): JSX.Element => {
   return (
+    <>
     <header
       id="home"
       className="relative w-full min-h-screen bg-[#0b0f10] text-white overflow-hidden"
@@ -11,57 +12,28 @@ const Home = (): JSX.Element => {
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent" />
 
       <div className="section-container flex flex-col justify-center min-h-screen pt-20 pb-16">
-        {/* Hero Top: Profile Card + Big Editorial Heading & CTAs */}
-        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-14 pt-4 sm:pt-8">
-          {/* Avatar Profile Card */}
-          <div className="flex flex-col items-center flex-shrink-0 text-center animate-fade-in-up">
-            <div className="relative group">
-              {/* Outer soft ambient halo */}
-              <div className="absolute -inset-1 bg-gradient-to-b from-emerald-500/20 via-white/5 to-transparent blur-md opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
-
-              {/* Photo Frame */}
-              <div className="relative w-44 h-44 sm:w-48 sm:h-48 lg:w-52 lg:h-52 overflow-hidden transition-transform duration-300 group-hover:scale-[1.02]">
-                <img
-                  src={photo}
-                  alt="Dawit Zeleke"
-                  className="w-full h-full object-cover object-top rounded-xl"
-                />
-              </div>
-
-
+        {/* Hero: Text left + Photo right */}
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-16 pt-4 sm:pt-8">
+          {/* Left: Status badge, Heading, Description, CTAs, Links */}
+          <div className="flex-1 text-center lg:text-left animate-fade-in-up">
+            {/* Status badge */}
+            <div className="inline-flex items-center gap-2 rounded-lg border border-emerald-500/30 bg-emerald-500/[0.06] px-4 py-1.5 mb-6">
+              <span className="status-dot" />
+              <span className="text-xs font-mono text-emerald-400/90">Open to opportunities</span>
             </div>
-
-            {/* Name & Credentials */}
-            <div className="mt-5">
-              <h2 className="text-xl sm:text-2xl font-semibold text-white tracking-tight">
-                Dawit Zeleke
-              </h2>
-              <p className="text-xs sm:text-sm font-mono text-white/40 mt-1 w-[300px]">
-                Researcher and Software Engineer at Ethiopian Artificial Intelligence Institute
-              </p>
-              <p className="text-xs sm:text-sm font-mono text-white/40 mt-1 w-[300px]">dawitzeleke92@gmail.com</p>
-            </div>
-
-          </div>
-
-          {/* Right: Big Editorial Headline + Description + CTAs */}
-          <div className="flex-1 text-center lg:text-left animate-fade-in-up animate-delay-100">
-            {/* Intro label */}
-            <p className="text-xs font-mono tracking-widest uppercase text-emerald-400/80 mb-3">
-              Full-Stack & Distributed Systems
-            </p>
 
             {/* Big editorial heading */}
             <h1 className="font-display text-[2.5rem] sm:text-[3.25rem] md:text-[3.75rem] lg:text-[4.25rem] font-normal leading-[1.08] text-white">
-              I engineer software that turns complex problems into practical products.
+              Hi, I'm{" "}
+              <span className="text-emerald-400">Dawit</span>{" "}
+              <span className="text-emerald-400">Zeleke</span>
             </h1>
 
             {/* Description */}
-            <p className="max-w-2xl text-base sm:text-lg text-white/50 mt-6 leading-relaxed">
-              I build full-stack web platforms, mobile clients and distributed
-              backends — from the interface people touch to the services, data
-              model and infrastructure behind it. Some of it is already running
-              for client organisations.
+            <p className="max-w-lg text-base sm:text-lg text-white/50 mt-6 leading-relaxed">
+              Researcher and Software Engineer. I build full-stack web platforms,
+              mobile clients and distributed backends — from the interface people
+              touch to the services, data model and infrastructure behind it.
             </p>
 
             {/* CTAs */}
@@ -72,7 +44,7 @@ const Home = (): JSX.Element => {
                 duration={500}
                 className="btn-primary cursor-pointer"
               >
-                Explore selected work
+                View My Work
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                   <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -84,22 +56,78 @@ const Home = (): JSX.Element => {
                 duration={500}
                 className="btn-ghost cursor-pointer"
               >
-                Get in touch
+                Get in Touch
               </Link>
+            </div>
 
+            {/* Social & contact links row */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-5 mt-8 pt-6 border-t border-white/[0.06]">
+              <a
+                href="https://github.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm text-white/50 hover:text-white transition-colors"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+              </a>
+              <a
+                href="https://linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm text-white/50 hover:text-white transition-colors"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+              </a>
               <a
                 href="/resume.pdf"
                 download
-                className="inline-flex items-center gap-1.5 ml-2 text-sm text-white/40 hover:text-white/70 transition-colors"
+                className="inline-flex items-center gap-1.5 text-sm text-white/50 hover:text-white transition-colors"
               >
-                Download résumé (PDF)
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                Résumé
               </a>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-5 mt-3">
+              <span className="inline-flex items-center gap-1.5 text-sm text-white/40">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
+                dawitzeleke92@gmail.com
+              </span>
+            </div>
+          </div>
+
+          {/* Right: Large circular profile photo */}
+          <div className="flex-shrink-0 flex flex-col items-center animate-fade-in-up animate-delay-100">
+            <div className="relative group">
+              {/* Outer ambient glow ring */}
+              <div className="absolute -inset-2 rounded-full bg-gradient-to-b from-emerald-500/20 via-white/5 to-transparent blur-lg opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+
+              {/* Circular photo */}
+              <div className="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-lg overflow-hidden border-2 border-white/10 transition-transform duration-300 group-hover:scale-[1.02]">
+                <img
+                  src={photo}
+                  alt="Dawit Zeleke"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+            </div>
+
+            {/* Location badge */}
+            <div className="mt-4 inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.04] px-3 py-1">
+              <span className="w-2 h-2 rounded-lg bg-emerald-400" />
+              <span className="text-xs font-mono text-white/50">Addis Ababa, ET</span>
             </div>
           </div>
         </div>
+      </div>
+    </header>
 
-        {/* Architecture diagram section — interactive visual like Biniyam */}
-        <div className="mt-16 animate-fade-in-up animate-delay-500">
+    {/* Architecture diagram section — below the fold */}
+    <section className="w-full bg-[#0b0f10] text-white">
+      <div className="section-container py-16">
+        <div className="animate-fade-in-up animate-delay-500">
           <div className="card p-6 md:p-8">
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-3">
@@ -178,7 +206,8 @@ const Home = (): JSX.Element => {
           </div>
         </div>
       </div>
-    </header>
+    </section>
+  </>
   );
 };
 

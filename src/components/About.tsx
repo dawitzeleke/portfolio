@@ -17,25 +17,17 @@ const About = (): JSX.Element => {
         <div className="mt-14 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-12 lg:gap-16 items-start">
           {/* Left — description paragraphs */}
           <div className="space-y-6">
-            <p className="text-sm sm:text-base text-white/50 leading-relaxed">
+            <p className="text-lg sm:text-xl text-white/60 leading-relaxed">
               I'm a Software Engineer and Researcher at the Ethiopian Artificial
               Intelligence Institute. I hold a B.S. in Software Engineering from
-              Addis Ababa University with a 3.46 GPA (Distinction), and I'm a
+              Addis Ababa University, and I'm a
               graduate of the A2SV Africa to Silicon Valley program backed by Google.
             </p>
 
-            <p className="text-sm sm:text-base text-white/50 leading-relaxed">
-              I've worked across the full stack — building CRM dashboards handling
-              20K+ contacts, mobile apps with 1,000+ downloads on Google Play,
-              real-time telehealth platforms, and ML-driven climate projections
-              processing 98K+ historical records. My work spans companies across
-              3 continents, from enterprise outsourcing to research institutions.
-            </p>
-
-            <p className="text-sm sm:text-base text-white/50 leading-relaxed">
+            <p className="text-lg sm:text-xl text-white/60 leading-relaxed">
               I'm currently conducting ML research on climate extremes at EAII,
               building production software in Flutter, NestJS, and Next.js, and
-              mentoring 100+ students in data structures and algorithms. Open to
+              mentoring 100+ students in programming fundamentals, data structures and algorithms. Open to
               Software Engineering and Data Science roles.
             </p>
 
@@ -43,7 +35,7 @@ const About = (): JSX.Element => {
               to="contact"
               smooth
               duration={500}
-              className="inline-flex items-center gap-2 text-sm font-medium text-emerald-400/80 hover:text-emerald-400 cursor-pointer transition-colors mt-2"
+              className="inline-flex items-center gap-2 text-base font-medium text-emerald-400/80 hover:text-emerald-400 cursor-pointer transition-colors mt-2"
             >
               Let's work together
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -55,7 +47,7 @@ const About = (): JSX.Element => {
           {/* Right — stat cards */}
           <div className="flex flex-row lg:flex-col gap-4 lg:w-56">
             {[
-              { value: "4+", label: "Years Coding" },
+              { value: "5+", label: "Years Coding" },
               { value: "6+", label: "Companies Worked" },
               { value: "20+", label: "Technologies Used" },
             ].map((stat, i) => (

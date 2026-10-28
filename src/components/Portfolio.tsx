@@ -80,7 +80,8 @@ const Portfolio = (): JSX.Element => {
   return (
     <section
       id="portfolio"
-      className="relative w-full py-24 bg-[#0b0f10] text-white"
+      className="relative w-full py-24"
+      style={{ background: "var(--bg-primary)", color: "var(--text-primary)" }}
     >
       <div className="section-container">
         {/* Section header */}
@@ -103,13 +104,16 @@ const Portfolio = (): JSX.Element => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                 {/* Text side */}
                 <div className="space-y-4">
-                  <p className="text-xs text-white/30 font-mono uppercase tracking-wider">
+                  <p className="text-xs font-mono uppercase tracking-wider" style={{ color: "var(--text-faint)" }}>
                     {project.category}
                   </p>
-                  <h3 className="font-display text-3xl md:text-4xl text-white leading-tight">
+                  <h3
+                    className="font-display text-3xl md:text-4xl leading-tight"
+                    style={{ color: "var(--text-heading)" }}
+                  >
                     {project.title}
                   </h3>
-                  <p className="text-sm text-white/50 leading-relaxed max-w-md">
+                  <p className="text-sm leading-relaxed max-w-md" style={{ color: "var(--text-tertiary)" }}>
                     {project.description}
                   </p>
 
@@ -143,7 +147,8 @@ const Portfolio = (): JSX.Element => {
                         href={project.githubLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors"
+                        className="inline-flex items-center gap-2 text-sm transition-colors"
+                        style={{ color: "var(--text-secondary)" }}
                       >
                         <FaGithub size={16} />
                         View source →
@@ -165,7 +170,13 @@ const Portfolio = (): JSX.Element => {
 
                 {/* Image side */}
                 {project.image && (
-                  <div className="relative overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.02]">
+                  <div
+                    className="relative overflow-hidden rounded-xl"
+                    style={{
+                      border: "1px solid var(--border-default)",
+                      backgroundColor: "var(--bg-card)",
+                    }}
+                  >
                     <img
                       src={project.image}
                       alt={project.title}
@@ -181,9 +192,12 @@ const Portfolio = (): JSX.Element => {
           ))}
         </div>
 
-        {/* More projects — table style like Biniyam's */}
+        {/* More projects — table style */}
         <div className="mt-20">
-          <h3 className="font-display text-2xl md:text-3xl text-white mb-8">
+          <h3
+            className="font-display text-2xl md:text-3xl mb-8"
+            style={{ color: "var(--text-heading)" }}
+          >
             More projects
           </h3>
           <div className="space-y-0">
@@ -193,15 +207,19 @@ const Portfolio = (): JSX.Element => {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="table-row-hover group grid grid-cols-1 md:grid-cols-[200px_1fr_auto_auto] gap-3 md:gap-6 items-center py-5 border-t border-white/[0.06] cursor-pointer"
+                className="table-row-hover group grid grid-cols-1 md:grid-cols-[200px_1fr_auto_auto] gap-3 md:gap-6 items-center py-5 cursor-pointer"
+                style={{ borderTop: "1px solid var(--border-default)" }}
               >
-                <h4 className="text-sm font-semibold text-white group-hover:text-emerald-400 transition-colors">
+                <h4
+                  className="text-sm font-semibold group-hover:text-emerald-400 transition-colors"
+                  style={{ color: "var(--text-heading)" }}
+                >
                   {project.title}
                 </h4>
-                <p className="text-sm text-white/40 line-clamp-1">
+                <p className="text-sm line-clamp-1" style={{ color: "var(--text-muted)" }}>
                   {project.description}
                 </p>
-                <span className="font-mono text-xs text-white/25 hidden md:block whitespace-nowrap">
+                <span className="font-mono text-xs hidden md:block whitespace-nowrap" style={{ color: "var(--text-ghost)" }}>
                   {project.techs}
                 </span>
                 <svg
@@ -209,7 +227,8 @@ const Portfolio = (): JSX.Element => {
                   height="14"
                   viewBox="0 0 14 14"
                   fill="none"
-                  className="text-white/20 group-hover:text-emerald-400 transition-colors hidden md:block"
+                  className="group-hover:text-emerald-400 transition-colors hidden md:block"
+                  style={{ color: "var(--text-dimest)" }}
                 >
                   <path d="M1 13L13 1M13 1H5M13 1V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>

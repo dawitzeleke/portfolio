@@ -4,7 +4,8 @@ const About = (): JSX.Element => {
   return (
     <section
       id="about"
-      className="relative w-full py-24 bg-[#0b0f10] text-white"
+      className="relative w-full py-24"
+      style={{ background: "var(--bg-primary)", color: "var(--text-primary)" }}
     >
       <div className="section-container">
         {/* Section header */}
@@ -17,14 +18,20 @@ const About = (): JSX.Element => {
         <div className="mt-14 grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-12 lg:gap-16 items-start">
           {/* Left — description paragraphs */}
           <div className="space-y-6">
-            <p className="text-lg sm:text-xl text-white/60 leading-relaxed">
+            <p
+              className="text-lg sm:text-xl leading-relaxed"
+              style={{ color: "var(--text-secondary)" }}
+            >
               I'm a Software Engineer and Researcher at the Ethiopian Artificial
               Intelligence Institute. I hold a B.S. in Software Engineering from
               Addis Ababa University, and I'm a
               graduate of the A2SV Africa to Silicon Valley program backed by Google.
             </p>
 
-            <p className="text-lg sm:text-xl text-white/60 leading-relaxed">
+            <p
+              className="text-lg sm:text-xl leading-relaxed"
+              style={{ color: "var(--text-secondary)" }}
+            >
               I'm currently conducting ML research on climate extremes at EAII,
               building production software in Flutter, NestJS, and Next.js, and
               mentoring 100+ students in programming fundamentals, data structures and algorithms. Open to
@@ -53,12 +60,22 @@ const About = (): JSX.Element => {
             ].map((stat, i) => (
               <div
                 key={i}
-                className="flex-1 lg:flex-none rounded-xl border border-white/[0.06] bg-white/[0.02] p-5 lg:p-6"
+                className="flex-1 lg:flex-none rounded-xl p-5 lg:p-6"
+                style={{
+                  border: "1px solid var(--stat-border)",
+                  backgroundColor: "var(--stat-bg)",
+                }}
               >
-                <p className="text-2xl sm:text-3xl font-bold text-white leading-none">
+                <p
+                  className="text-2xl sm:text-3xl font-bold leading-none"
+                  style={{ color: "var(--text-heading)" }}
+                >
                   {stat.value}
                 </p>
-                <p className="text-xs sm:text-sm text-white/40 mt-1.5">
+                <p
+                  className="text-xs sm:text-sm mt-1.5"
+                  style={{ color: "var(--text-muted)" }}
+                >
                   {stat.label}
                 </p>
               </div>

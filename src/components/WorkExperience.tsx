@@ -110,7 +110,8 @@ const WorkExperience = (): JSX.Element => {
   return (
     <section
       id="work"
-      className="relative w-full py-24 bg-[#0b0f10] text-white"
+      className="relative w-full py-24"
+      style={{ background: "var(--bg-primary)", color: "var(--text-primary)" }}
     >
       <div className="section-container">
         {/* Section header */}
@@ -131,7 +132,7 @@ const WorkExperience = (): JSX.Element => {
             return (
               <div
                 key={exp.id}
-                className="border-t border-white/[0.06] first:border-t-0"
+                style={{ borderTop: "1px solid var(--border-default)" }}
               >
                 <button
                   onClick={() => setExpandedId(isExpanded ? null : exp.id)}
@@ -140,25 +141,36 @@ const WorkExperience = (): JSX.Element => {
                   <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-2 items-start">
                     <div>
                       <div className="flex items-center gap-3">
-                        <h3 className="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors leading-tight">
+                        <h3
+                          className="text-base font-semibold group-hover:text-emerald-400 transition-colors leading-tight"
+                          style={{ color: "var(--text-heading)" }}
+                        >
                           {exp.role}
                         </h3>
-                        <span className="hidden md:inline-block px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full bg-white/[0.05] text-white/40 border border-white/[0.06]">
+                        <span
+                          className="hidden md:inline-block px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider rounded-full"
+                          style={{
+                            backgroundColor: "var(--badge-bg)",
+                            color: "var(--badge-text)",
+                            border: "1px solid var(--badge-border)",
+                          }}
+                        >
                           {exp.type}
                         </span>
                       </div>
-                      <p className="mt-1 text-sm text-white/40">
+                      <p className="mt-1 text-sm" style={{ color: "var(--text-muted)" }}>
                         {exp.company}
                       </p>
                     </div>
                     <div className="flex items-center gap-3">
-                      <span className="text-xs text-white/30 font-mono whitespace-nowrap">
+                      <span className="text-xs font-mono whitespace-nowrap" style={{ color: "var(--text-faint)" }}>
                         {exp.period}
                       </span>
                       <svg
-                        className={`w-4 h-4 text-white/20 transition-transform duration-300 ${
+                        className={`w-4 h-4 transition-transform duration-300 ${
                           isExpanded ? "rotate-180" : ""
                         }`}
+                        style={{ color: "var(--text-dimest)" }}
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -170,7 +182,7 @@ const WorkExperience = (): JSX.Element => {
                   </div>
 
                   {/* Meta row */}
-                  <div className="flex flex-wrap items-center gap-3 mt-2 text-xs text-white/25">
+                  <div className="flex flex-wrap items-center gap-3 mt-2 text-xs" style={{ color: "var(--text-ghost)" }}>
                     <span>{exp.location}</span>
                     <span>·</span>
                     <span>{exp.mode}</span>
@@ -187,13 +199,14 @@ const WorkExperience = (): JSX.Element => {
                       : "max-h-0 opacity-0 pb-0"
                   }`}
                 >
-                  <ul className="space-y-3 pl-4 border-l border-white/[0.06]">
+                  <ul className="space-y-3 pl-4" style={{ borderLeft: "1px solid var(--border-default)" }}>
                     {exp.bullets.map((bullet, i) => (
                       <li
                         key={i}
-                        className="text-sm text-white/45 leading-relaxed pl-4 relative"
+                        className="text-sm leading-relaxed pl-4 relative"
+                        style={{ color: "var(--text-muted)" }}
                       >
-                        <span className="absolute left-0 top-2.5 w-1.5 h-1.5 rounded-full bg-white/15" />
+                        <span className="absolute left-0 top-2.5 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: "var(--bullet-dot)" }} />
                         {bullet}
                       </li>
                     ))}

@@ -39,7 +39,8 @@ const Experience = (): JSX.Element => {
   return (
     <section
       id="experience"
-      className="relative w-full py-24 bg-[#0b0f10] text-white"
+      className="relative w-full py-24"
+      style={{ background: "var(--bg-primary)", color: "var(--text-primary)" }}
     >
       <div className="section-container">
         {/* Section header */}
@@ -51,22 +52,32 @@ const Experience = (): JSX.Element => {
           Grouped by what they are for, with the work that uses them.
         </p>
 
-        {/* Skills table — Biniyam's two-column editorial style */}
+        {/* Skills table — two-column editorial style */}
         <div className="mt-16 space-y-0">
           {capabilities.map((cap, i) => (
             <div
               key={i}
-              className="py-7 border-t border-white/[0.06] first:border-t-0 table-row-hover"
+              className="py-7 table-row-hover"
+              style={{ borderTop: "1px solid var(--border-default)" }}
             >
               <div className="grid grid-cols-1 md:grid-cols-[180px_1fr] gap-3 md:gap-8 items-start">
-                <h3 className="text-sm font-semibold text-white/70">
+                <h3
+                  className="text-sm font-semibold"
+                  style={{ color: "var(--text-secondary)" }}
+                >
                   {cap.category}
                 </h3>
                 <div>
-                  <p className="text-sm font-semibold text-white/90">
+                  <p
+                    className="text-sm font-semibold"
+                    style={{ color: "var(--text-heading)" }}
+                  >
                     {cap.tools}
                   </p>
-                  <p className="mt-1.5 text-xs text-white/30 leading-relaxed">
+                  <p
+                    className="mt-1.5 text-xs leading-relaxed"
+                    style={{ color: "var(--text-faint)" }}
+                  >
                     {cap.context}
                   </p>
                 </div>

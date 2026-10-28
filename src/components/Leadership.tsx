@@ -62,7 +62,8 @@ const Leadership = (): JSX.Element => {
   return (
     <section
       id="leadership"
-      className="relative w-full py-24 bg-[#0b0f10] text-white"
+      className="relative w-full py-24"
+      style={{ background: "var(--bg-primary)", color: "var(--text-primary)" }}
     >
       <div className="section-container">
         {/* Section header */}
@@ -80,15 +81,19 @@ const Leadership = (): JSX.Element => {
           {leadershipData.map((item) => (
             <article
               key={item.id}
-              className="py-8 border-t border-white/[0.06] first:border-t-0"
+              className="py-8"
+              style={{ borderTop: "1px solid var(--border-default)" }}
             >
               <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-4 md:gap-8">
                 {/* Left column — role & period */}
                 <div>
-                  <h3 className="text-sm font-semibold text-white leading-tight">
+                  <h3
+                    className="text-sm font-semibold leading-tight"
+                    style={{ color: "var(--text-heading)" }}
+                  >
                     {item.role}
                   </h3>
-                  <p className="mt-1 text-xs text-white/30 font-mono">
+                  <p className="mt-1 text-xs font-mono" style={{ color: "var(--text-faint)" }}>
                     {item.period}
                   </p>
                 </div>
@@ -96,14 +101,14 @@ const Leadership = (): JSX.Element => {
                 {/* Right column — org, location, bullets */}
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <p className="text-sm font-medium text-white/60">
+                    <p className="text-sm font-medium" style={{ color: "var(--text-secondary)" }}>
                       {item.organization}
                     </p>
-                    <span className="text-xs text-white/20">·</span>
-                    <p className="text-xs text-white/25">{item.location}</p>
+                    <span className="text-xs" style={{ color: "var(--text-dimest)" }}>·</span>
+                    <p className="text-xs" style={{ color: "var(--text-ghost)" }}>{item.location}</p>
                     {item.period.includes("Present") && (
                       <>
-                        <span className="text-xs text-white/20">·</span>
+                        <span className="text-xs" style={{ color: "var(--text-dimest)" }}>·</span>
                         <span className="inline-flex items-center gap-1.5 text-xs text-emerald-400/70">
                           <span className="status-dot" style={{ width: 6, height: 6 }} />
                           Active
@@ -116,9 +121,10 @@ const Leadership = (): JSX.Element => {
                     {item.bullets.map((bullet, i) => (
                       <li
                         key={i}
-                        className="text-sm text-white/40 leading-relaxed pl-4 relative"
+                        className="text-sm leading-relaxed pl-4 relative"
+                        style={{ color: "var(--text-muted)" }}
                       >
-                        <span className="absolute left-0 top-2.5 w-1 h-1 rounded-full bg-white/15" />
+                        <span className="absolute left-0 top-2.5 w-1 h-1 rounded-full" style={{ backgroundColor: "var(--bullet-dot)" }} />
                         {bullet}
                       </li>
                     ))}

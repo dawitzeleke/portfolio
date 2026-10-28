@@ -2,7 +2,8 @@ const Contact = (): JSX.Element => {
   return (
     <section
       id="contact"
-      className="relative w-full py-24 bg-[#0b0f10] text-white"
+      className="relative w-full py-24"
+      style={{ background: "var(--bg-primary)", color: "var(--text-primary)" }}
     >
       <div className="section-container">
         {/* Section header */}
@@ -34,19 +35,27 @@ const Contact = (): JSX.Element => {
                   value: "Addis Ababa, Ethiopia",
                 },
               ].map((item, i) => (
-                <div key={i} className="py-4 border-t border-white/[0.06] first:border-t-0">
-                  <p className="text-xs text-white/30 uppercase tracking-wider mb-1">
+                <div
+                  key={i}
+                  className="py-4"
+                  style={{ borderTop: i > 0 ? "1px solid var(--border-default)" : undefined }}
+                >
+                  <p
+                    className="text-xs uppercase tracking-wider mb-1"
+                    style={{ color: "var(--text-faint)" }}
+                  >
                     {item.label}
                   </p>
                   {item.href ? (
                     <a
                       href={item.href}
-                      className="text-sm font-medium text-white/70 hover:text-emerald-400 transition-colors"
+                      className="text-sm font-medium hover:text-emerald-400 transition-colors"
+                      style={{ color: "var(--text-secondary)" }}
                     >
                       {item.value}
                     </a>
                   ) : (
-                    <p className="text-sm font-medium text-white/70">
+                    <p className="text-sm font-medium" style={{ color: "var(--text-secondary)" }}>
                       {item.value}
                     </p>
                   )}
@@ -81,7 +90,22 @@ const Contact = (): JSX.Element => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-10 h-10 rounded-lg border border-white/[0.06] bg-white/[0.02] text-white/40 hover:text-white hover:border-white/15 hover:bg-white/[0.04] transition-all duration-200"
+                  className="flex items-center justify-center w-10 h-10 rounded-lg transition-all duration-200"
+                  style={{
+                    border: "1px solid var(--social-border)",
+                    backgroundColor: "var(--social-bg)",
+                    color: "var(--social-text)",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = "var(--social-hover-text)";
+                    e.currentTarget.style.borderColor = "var(--social-hover-border)";
+                    e.currentTarget.style.backgroundColor = "var(--social-hover-bg)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = "var(--social-text)";
+                    e.currentTarget.style.borderColor = "var(--social-border)";
+                    e.currentTarget.style.backgroundColor = "var(--social-bg)";
+                  }}
                   aria-label={social.label}
                 >
                   {social.icon}
@@ -97,7 +121,11 @@ const Contact = (): JSX.Element => {
             className="space-y-5"
           >
             <div>
-              <label className="text-xs text-white/30 uppercase tracking-wider" htmlFor="contact-name">
+              <label
+                className="text-xs uppercase tracking-wider"
+                htmlFor="contact-name"
+                style={{ color: "var(--text-faint)" }}
+              >
                 Name
               </label>
               <input
@@ -105,11 +133,20 @@ const Contact = (): JSX.Element => {
                 type="text"
                 name="name"
                 placeholder="Your name"
-                className="mt-2 w-full rounded-lg border border-white/[0.08] bg-white/[0.02] px-4 py-3 text-sm text-white placeholder:text-white/20 focus:border-emerald-500/40 focus:outline-none focus:ring-1 focus:ring-emerald-500/20 transition-colors"
+                className="mt-2 w-full rounded-lg px-4 py-3 text-sm focus:border-emerald-500/40 focus:outline-none focus:ring-1 focus:ring-emerald-500/20 transition-colors"
+                style={{
+                  border: "1px solid var(--input-border)",
+                  backgroundColor: "var(--input-bg)",
+                  color: "var(--input-text)",
+                }}
               />
             </div>
             <div>
-              <label className="text-xs text-white/30 uppercase tracking-wider" htmlFor="contact-email">
+              <label
+                className="text-xs uppercase tracking-wider"
+                htmlFor="contact-email"
+                style={{ color: "var(--text-faint)" }}
+              >
                 Email
               </label>
               <input
@@ -117,11 +154,20 @@ const Contact = (): JSX.Element => {
                 type="email"
                 name="email"
                 placeholder="you@company.com"
-                className="mt-2 w-full rounded-lg border border-white/[0.08] bg-white/[0.02] px-4 py-3 text-sm text-white placeholder:text-white/20 focus:border-emerald-500/40 focus:outline-none focus:ring-1 focus:ring-emerald-500/20 transition-colors"
+                className="mt-2 w-full rounded-lg px-4 py-3 text-sm focus:border-emerald-500/40 focus:outline-none focus:ring-1 focus:ring-emerald-500/20 transition-colors"
+                style={{
+                  border: "1px solid var(--input-border)",
+                  backgroundColor: "var(--input-bg)",
+                  color: "var(--input-text)",
+                }}
               />
             </div>
             <div>
-              <label className="text-xs text-white/30 uppercase tracking-wider" htmlFor="contact-message">
+              <label
+                className="text-xs uppercase tracking-wider"
+                htmlFor="contact-message"
+                style={{ color: "var(--text-faint)" }}
+              >
                 Message
               </label>
               <textarea
@@ -129,7 +175,12 @@ const Contact = (): JSX.Element => {
                 name="message"
                 placeholder="Tell me about your project..."
                 rows={6}
-                className="mt-2 w-full rounded-lg border border-white/[0.08] bg-white/[0.02] px-4 py-3 text-sm text-white placeholder:text-white/20 focus:border-emerald-500/40 focus:outline-none focus:ring-1 focus:ring-emerald-500/20 transition-colors resize-none"
+                className="mt-2 w-full rounded-lg px-4 py-3 text-sm focus:border-emerald-500/40 focus:outline-none focus:ring-1 focus:ring-emerald-500/20 transition-colors resize-none"
+                style={{
+                  border: "1px solid var(--input-border)",
+                  backgroundColor: "var(--input-bg)",
+                  color: "var(--input-text)",
+                }}
               />
             </div>
 
@@ -148,18 +199,21 @@ const Contact = (): JSX.Element => {
 
       {/* Footer */}
       <div className="section-container mt-24">
-        <div className="py-8 border-t border-white/[0.06] flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-white/20">
+        <div
+          className="py-8 flex flex-col md:flex-row items-center justify-between gap-4"
+          style={{ borderTop: "1px solid var(--border-default)" }}
+        >
+          <p className="text-xs" style={{ color: "var(--text-dimest)" }}>
             © 2026 Dawit Zeleke. Built with React & TypeScript.
           </p>
-          <div className="flex items-center gap-4 text-xs text-white/25">
-            <a href="https://github.com/dawitzeleke" target="_blank" rel="noopener noreferrer" className="hover:text-white/50 transition-colors">
+          <div className="flex items-center gap-4 text-xs" style={{ color: "var(--text-ghost)" }}>
+            <a href="https://github.com/dawitzeleke" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors">
               GitHub
             </a>
-            <a href="https://www.linkedin.com/in/dawit-zeleke/" target="_blank" rel="noopener noreferrer" className="hover:text-white/50 transition-colors">
+            <a href="https://www.linkedin.com/in/dawit-zeleke/" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors">
               LinkedIn
             </a>
-            <a href="mailto:dawitzeleke92@gmail.com" className="hover:text-white/50 transition-colors">
+            <a href="mailto:dawitzeleke92@gmail.com" className="hover:text-emerald-400 transition-colors">
               Email
             </a>
           </div>
